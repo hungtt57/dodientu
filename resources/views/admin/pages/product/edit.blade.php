@@ -22,51 +22,58 @@
 
 				<div class="form-group">
 				<label class="col-md-2 control-label" for="name_category">Tên sản phẩm</label>
-					<div class="col-md-6">
-						<input class="form-control" tabindex="1" value='{{$product->ten}}' type="text" name="ten" id="ten">
+					<div class="col-md-10">
+						<input class="form-control" tabindex="1" value='{{$product->name}}' type="text" name="name" id="name">
 					</div>
 				</div>
+
+
 				<div class="form-group">
-				<label class="col-md-2 control-label" for="name_category">Mã sản phẩm</label>
-					<div class="col-md-6">
-						<input class="form-control" tabindex="1" value='{{$product->masp}}' type="text" name="masp" id="masp">
+				<label class="col-md-2 control-label" for="name_category">Giá hiện tại</label>
+					<div class="col-md-10">
+						<input class="form-control" tabindex="1" value='{{$product->old_price}}' type="number" name="old_price" id="old_price">
 					</div>
 				</div>
 
 				<div class="form-group">
-				<label class="col-md-2 control-label" for="name_category">Giá</label>
-					<div class="col-md-6">
-						<input class="form-control" tabindex="1" value='{{$product->gia}}' type="number" name="gia" id="gia">
+				<label class="col-md-2 control-label" for="name_category">Giá mới</label>
+					<div class="col-md-10">
+						<input class="form-control" tabindex="1" value='{{$product->new_price}}' type="number" name="new_price" id="new_price">
+					</div>
+				</div>
+
+				<div class="form-group">
+				<label class="col-md-2 control-label" for="name_category">Mô tả ngắn</label>
+					<div class="col-md-10">
+						<input class="form-control" value='{{$product->short_description}}' name="short_description" id="short_description">
 					</div>
 				</div>
 				<div class="form-group">
-				<label class="col-md-2 control-label" for="name_category">Công dụng</label>
-					<div class="col-md-6">
-						<textarea class="form-control" tabindex="1" type="text" name="congdung" id="congdung">{{$product->congdung}}</textarea>
-						<script>    CKEDITOR.replace('congdung')</script>
+				<label class="col-md-2 control-label" for="name_category">Mô tả</label>
+					<div class="col-md-10">
+						<textarea class="form-control" tabindex="1"   type="text" name="description" id="description">
+						{{$product->description}}</textarea>
+							<script> CKEDITOR.replace('description')</script>
 					</div>
 				</div>
+
 				<div class="form-group">
-				<label class="col-md-2 control-label" for="name_category">Cách dùng</label>
-					<div class="col-md-6">
-						<textarea class="form-control" tabindex="1"   type="text" name="cachdung" id="cachdung">
-						{{$product->cachdung}}</textarea>
-							<script> CKEDITOR.replace('cachdung')</script>
+				<label class="col-md-2 control-label" for="name_category">Thông số kĩ thuật</label>
+					<div class="col-md-10">
+						<textarea class="form-control" tabindex="1" type="text" name=info" id="info">
+						{{$product->info}}</textarea>
+							<script> CKEDITOR.replace('info')</script>
 					</div>
 				</div>
-				<div class="form-group">
-				<label class="col-md-2 control-label" for="name_category">Đóng gói</label>
-					<div class="col-md-6">
-						<input class="form-control" value='{{$product->donggoi}}' name="donggoi" id="donggoi">
-					</div>
-				</div>
+
+				
 					<div class="form-group">
 						    	<label class="col-md-2 control-label" for="name_category">Chọn danh mục</label>
-						    <div class="col-md-6">
+						    <div class="col-md-10">
 						    	<select class="form-control" name='category_id'>
 						    	 <?php foreach ($categories as $key => $category): ?>
                                           @if(isset($category['sub']))
-                                            <optgroup label="{{ $category['ten']}} ">
+                                            <optgroup label="{{ $category['name']}} ">
                                               @if(isset($category['sub']))
 
                                               @include('admin.includes.indexeditproduct', array('items' => $category['sub'],'id'=>$product->category_id,'count'=>'- -'))
@@ -74,7 +81,7 @@
                                               @endif
                                             </optgroup>
                                           @else
-                                            <option <?php if($product->category_id==$category['id']) echo 'selected'; ?> value="{{$category['id']}}">{{$category['ten'] }}</option>
+                                            <option <?php if($product->category_id==$category['id']) echo 'selected'; ?> value="{{$category['id']}}">{{$category['name'] }}</option>
 
                                           @endif
 
@@ -90,12 +97,12 @@
 				    	<div class="form-group">
 						    	<label class="col-md-2 control-label" for="name_category">Chọn ảnh đại diện
 
-						    	<img src="{{asset($product->anhdaidien)}}" width="75px" height="75px">
+						    	<img src="{{asset($product->image)}}" width="75px" height="75px">
 
 
 						    	</label>
-						    <div class="col-md-6">
-						    	   <input id="image" class="form-control"  name="anhdaidien" type="file">
+						    <div class="col-md-10">
+						    	   <input id="image" class="form-control"  name="image" type="file">
 						    </div>
 				    	</div>
 

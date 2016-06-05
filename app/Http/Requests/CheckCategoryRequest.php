@@ -24,14 +24,14 @@ class CheckCategoryRequest extends Request
      public function rules()
     {
         return [
-            'ten' => 'required|min:2',
+            'name' => 'required|min:2',
         ];
 
     }
     public function messages(){
         return [
-            'ten.required' => 'Vui lòng nhập tên của category',
-            'ten.min' => 'Tên Catogory ít nhất là 2 ký tự',
+            'name.required' => 'Vui lòng nhập tên của category',
+            'name.min' => 'Tên Catogory ít nhất là 2 ký tự',
         ];
     }
 }

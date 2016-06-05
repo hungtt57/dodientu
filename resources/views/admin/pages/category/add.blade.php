@@ -19,7 +19,7 @@
 						<div class="form-group">
 						    	<label class="col-md-2 control-label" for="name_category">Tên danh mục</label>
 						    <div class="col-md-4">
-						    	<input class="form-control" tabindex="1" placeholder="Tên danh mục..." type="text" name="ten" id="ten">
+						    	<input class="form-control" tabindex="1" placeholder="Tên danh mục..." type="text" name="name" id="name">
 						    </div>
 				    	</div>
 				    	<div class="form-group">

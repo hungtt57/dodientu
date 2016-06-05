@@ -9,7 +9,7 @@
                               <i class="icon-file-text"></i>
                           </div>
                           <div class="value">
-                              <h1 class="count">{{$count_blog}}</h1>
+                              <h1 class="count">100</h1>
                               <p>Tin tức</p>
                           </div>
                       </section>
@@ -43,7 +43,7 @@
                               <i class="icon-shopping-cart"></i>
                           </div>
                           <div class="value">
-                              <h1 class=" count3">{{$count_order}}</h1>
+                              <h1 class=" count3">100</h1>
                               <p>Đơn Hàng</p>
                           </div>
                       </section>

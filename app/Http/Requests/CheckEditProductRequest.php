@@ -3,8 +3,8 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
-
-class CreateProductRequest extends Request
+use Input;
+class CheckEditProductRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,20 +23,21 @@ class CreateProductRequest extends Request
      */
     public function rules()
     {
+        $old_price = Input::get('old_price');
         return [
-           'name' => 'required|min:2|unique:products,name',
-           'image' => 'required|mimes:jpeg,jpg,png',
-           'old_price' => 'required',
+           'name' => 'required|min:2',
+           'image' => 'mimes:jpeg,jpg,png',
+           'old_price' => 'required'
+           // 'new_price' => "min:100"
         ];
     }
     public function messages(){
         return [
             'name.required' => 'Vui lòng nhập tên sản phẩm',
             'name.min'=>'Tên phải ít nhất 2 kí tự',
-            'name.unique' => 'Tên sản phẩm bị trùng',
-             'image.required' => 'Chọn ảnh đại diện',
              'old_price.required' => 'Nhập giá hiện tại của sản phẩm',
              'image.mimes' => 'Ảnh đại diện phải là định dạng jpeg,jpg,png',
+             // 'new_price.min' => 'Giá mới phải nhỏ hơn giá hiện tại'
         ];
     }
 }

@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CheckCategoryRequest;
 use DB;
+use Session;
 class CategoryController extends Controller
 {
     /**
@@ -17,6 +18,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
+       
        $allCategories= Category::all();
        return view('admin.pages.category.list_category',['allCategories'=>$allCategories]);
     }
@@ -45,10 +47,10 @@ class CategoryController extends Controller
     public function store(CheckCategoryRequest $request)
     {
         $category= new Category();
-        $category->ten = $request->input('ten');
+        $category->name = $request->input('name');
         $category->parent_id = $request->input('parent_id');
         $category->save();
-        return redirect('/admin/category/list')->with(['flash_message'=>'Tạo thành công']);
+        return redirect('/admin/category/list')->with(['success'=>'Tạo thành công']);
     }
     /**
      * Display the specified resource.
@@ -84,11 +86,11 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $category = Category::find($id);
-        $category->ten = $request->input('ten');
+        $category->name = $request->input('name');
            $category->parent_id = $request->input('parent_id');   
 
            $category->save();
-        return redirect('admin/category/list')->with(['flash_message'=>'Sửa thành công']);
+        return redirect('admin/category/list')->with(['info'=>'Sửa thành công']);
     }
 
     /**
@@ -100,6 +102,6 @@ class CategoryController extends Controller
     public function destroy($id)
     {
          Category::find($id)->delete();
-        return redirect('admin/category/list')->with(['flash_message'=>'Xóa thành công']);
+        return redirect('admin/category/list')->with(['danger'=>'Xóa thành công']);
     }
 }

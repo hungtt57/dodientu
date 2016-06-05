@@ -1,5 +1,15 @@
 @extends('admin.layout.master')
+@section('css')
+<style>
+	.table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+    border: 1px solid #333 !important;
+	}
+
+</style>
+@endsection
 @section('content')
+
+
 <section id="main-content">
 	<section class="wrapper">
 		<div class="page-title row" style="margin-bottom: 15px;">
@@ -21,40 +31,41 @@
 
 			<div class="col-xs-4">
 
-				<img class="img_product_show" src="{{asset($product->anhdaidien)}}">
+				<img class="img_product_show" src="{{asset($product->image)}}">
 
 			</div>		
 			<div class="col-xs-8">
 				
-			<table  class="table table-bordered table-hover" cellspacing="0" width="100%">
+			<table  class="table table-bordered table-hover" border="1" cellspacing="0" width="100%">
 				<tr>
-					<td>Tên</td>
-					<td >{{$product->ten}}</td>
+					<td width="100px">Tên</td>
+					<td >{{$product->name}}</td>
 				</tr>
 				<tr>
-					<td>Giá</td>
-					<td >{{$product->gia}}</td>
+					<td>Giá hiện tại</td>
+					<td >{{number_format($product->old_price)}}</td>
 				</tr>
 				<tr>
-					<td>Mã sản phẩm</td>
-					<td >{{$product->masp}}</td>
+					<td>Giá mới</td>
+					<td >{{number_format($product->new_price)}}</td>
 				</tr>
+				
 				<tr>
 					<td>Danh mục</td>
-					<td >{{get_category_name($product->category_id)}}</td>
+					<td>{{$category_name}}</td>
 				</tr>
 				<tr>
-					<td>Đóng gói</td>
-					<td>{{$product->donggoi}}</td>
+					<td>Mô tả ngắn</td>
+					<td>{{$product->short_description}}</td>
 				</tr>
 				<tr>
-					<td>Công dụng</td>
-					<td><?php echo $product->congdung; ?></td>
+					<td>Mô tả</td>
+					<td><?php echo $product->description; ?></td>
 
 				</tr>
 				<tr>
-					<td>Cách dùng</td>
-					<td><?php echo $product->cachdung; ?></td>
+					<td>Thông số kĩ thuật</td>
+					<td><?php echo $product->info; ?></td>
 				</tr>
 			</table>
 

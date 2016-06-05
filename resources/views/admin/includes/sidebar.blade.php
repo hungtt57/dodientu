@@ -41,16 +41,7 @@
                       </ul>
                   </li>
 
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="icon-list-ul"></i>
-                          <span>Tin tức</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="{{asset('admin/blog/create')}}">Đăng Tin</a></li>
-                          <li><a  href="{{asset('admin/blog/')}}">Danh sách tin</a></li>
-                      </ul>
-                  </li>
+              
 
                     <li class="sub-menu">
                       <a href="javascript:;" >

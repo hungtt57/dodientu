@@ -25,4 +25,3 @@
 		{{ Session::get('warning') }}
 	</div>
 @endif
-

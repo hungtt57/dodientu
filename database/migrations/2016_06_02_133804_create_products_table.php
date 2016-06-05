@@ -14,18 +14,20 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
     
-            // $table->timestamps();
-            // $table->increments('id');
-            // $table->string('name');
-            // $table->string('alias');
-            // $table->text('description');
-            // $table->text('special');
-            // $table->string('image');
-            // $table->integer('first_price');
-            // $table->integer('final_price');
-            // $table->integer('category_id')->unsigned();
+            $table->timestamps();
+            $table->increments('id');
+            $table->string('name');
+            $table->string('alias');
+            $table->text('description');
+            $table->text('short_description');
+            $table->text('info');
+            $table->string('image');
+            $table->integer('new_price');
+            $table->integer('old_price');
+            $table->string('sale');
+            $table->integer('category_id')->unsigned();
+            $table->text('more');
 
-            // $table->integer('hot_status')->default(0);
         });
     }
 
