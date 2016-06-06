@@ -20,16 +20,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $allCategories= Category::all();
-        $new_products = DB::table('products')->select('id','ten','anhdaidien','gia','alias')->orderBy('id','DESC')->paginate(8);
-        $blogs = DB::table('blog')->select('id','title','description','image','alias')->orderBy('id','ASC')->limit(2)->get();
-       return view('frontend.pages.home',compact('allCategories','new_products','blogs'));
+        $Categories= Category::where('parent_id','=',0)->get();
+        $allCategories= Category::where('parent_id','!=',0)->get(); 
+        /*$new_products = DB::table('products')->select('id','ten','anhdaidien','gia','alias')->orderBy('id','DESC')->paginate(8);
+        $blogs = DB::table('blog')->select('id','title','description','image','alias')->orderBy('id','ASC')->limit(2)->get();*/
+       return view('front-end.pages.home',compact('allCategories','Categories'));
     }
     public function loaisanpham($id)
     {
-        $product_cates = DB::table('products')->select('id','ten','alias','gia','anhdaidien','category_id')->where('category_id',$id)->paginate(10);
-        $name_cate = DB::table('categories')->select('ten')->where('id',$id)->first();
-        return view('frontend.pages.category',compact('product_cates','name_cate'));
+         $name_cate = DB::table('categories')->select('ten','id')->where('alias',$tenloai)->first();
+        //$product_cates = DB::table('products')->select('id','ten','alias','gia','anhdaidien','category_id')->where('category_id',$id)->paginate(10);
+       
+        return view('front-end.pages.category',compact('name_cate'));
     }
     public function chitietsanpham($id){
         $product_detail  = DB::table('products')->where('id',$id)->first();

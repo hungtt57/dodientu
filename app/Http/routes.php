@@ -19,7 +19,8 @@
 // Route::post('capnhatcart','HomeController@capnhatcart');
 
 
-// Route::get('/','HomeController@index');
+ Route::get('/','HomeController@index');
+ Route::get('/loai-san-pham/{tenloai}','HomeController@loaisanpham');
 // Route::get('/home','HomeController@index');
 // Route::get('/loaisanpham/{id}/{tenloai}','HomeController@loaisanpham');
 // Route::get('/chitietsanpham/{id}/{tenloai}','HomeController@chitietsanpham');
