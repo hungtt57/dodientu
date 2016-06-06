@@ -63,16 +63,9 @@
             </div>
             <div class="col-xs-7 col-sm-7 header-search-box">
                 <form class="form-inline">
-                      <div class="form-group form-category">
-                        <select class="select-category">
-                            <option value="" disabled selected>Danh Mục</option>
-                            @foreach($Categories as $data => $parent_category)
-                            <option value="{{$parent_category->id}}">{{$parent_category->name}}</option>
-                            @endforeach
-                        </select>
-                      </div>
+                      
                       <div class="form-group input-serach">
-                        <input type="text"  placeholder="Từ khóa tìm kiếm...">
+                        <input type="text"  placeholder="Từ khóa tìm kiếm..." style="line-height: 40px;">
                       </div>
                       <button type="submit" class="pull-right btn-search"></button>
                 </form>
@@ -93,7 +86,7 @@
                     <div class="vertical-menu-content is-home">
                         <ul class="vertical-menu-list">
                         @foreach($allCategories as $data => $category)
-                             <li><a href="asset('/loai-san-pham/'.$category->alias)"><img class="icon-menu" alt="Funky roots" src="public/assets/data/3.png">{{$category->name}}</a></li>
+                             <li><a href="{{asset('/loai-san-pham/'.$category->alias)}}"><img class="icon-menu" alt="Funky roots" src="public/assets/data/3.png">{{$category->name}}</a></li>
                         @endforeach 
                         </ul>
                         <div class="all-category"><span class="open-cate">Tất cả danh mục</span></div>

@@ -26,9 +26,9 @@ class HomeController extends Controller
         $blogs = DB::table('blog')->select('id','title','description','image','alias')->orderBy('id','ASC')->limit(2)->get();*/
        return view('front-end.pages.home',compact('allCategories','Categories'));
     }
-    public function loaisanpham($id)
+    public function loaisanpham($tenloai)
     {
-         $name_cate = DB::table('categories')->select('ten','id')->where('alias',$tenloai)->first();
+         $name_cate = DB::table('categories')->select('name','id')->where('alias',$tenloai)->first();
         //$product_cates = DB::table('products')->select('id','ten','alias','gia','anhdaidien','category_id')->where('category_id',$id)->paginate(10);
        
         return view('front-end.pages.category',compact('name_cate'));

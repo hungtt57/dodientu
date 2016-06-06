@@ -22,6 +22,15 @@ function category_name($id){
     $category=DB::table('categories')->where('id',$id)->first();
     return $category;
 }
+ function category_parent(){
+    $Categories = Category::where('parent_id','=',0)->get();
+   return $Categories;
+ }
+ function category_childs(){
+    $allCategories = Category::where('parent_id','!=',0)->get();
+   return $allCategories;
+ }
+  
 function getCategory(){
     $category=DB::table('categories')->get();
     return $category;

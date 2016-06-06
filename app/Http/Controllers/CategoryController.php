@@ -49,6 +49,7 @@ class CategoryController extends Controller
         $category= new Category();
         $category->name = $request->input('name');
         $category->parent_id = $request->input('parent_id');
+        $category->alias = str_slug($request->input('name'));
         $category->save();
         return redirect('/admin/category/list')->with(['success'=>'Tạo thành công']);
     }
