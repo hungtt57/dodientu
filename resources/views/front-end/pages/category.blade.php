@@ -21,13 +21,7 @@
                             <div class="layered_subtitle">CATEGORIES</div>
                             <div class="layered-content">
                                 <ul class="check-box-list">
-                                    <li>
-                                        <input type="checkbox" id="c1" name="cc" />
-                                        <label for="c1">
-                                        <span class="button"></span>
-                                        Tops<span class="count">(10)</span>
-                                        </label>
-                                    </li>
+                                    
                                     <li>
                                         <input type="checkbox" id="c2" name="cc" />
                                         <label for="c2">
