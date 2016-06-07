@@ -1,4 +1,5 @@
 <?php 
+use App\Category;
 function slug($str){
     if(!$str) return false;
     $unicode = array(
@@ -24,6 +25,7 @@ function category_name($id){
 }
  function category_parent(){
     $Categories = Category::where('parent_id','=',0)->get();
+    //var_dump($Categories);
    return $Categories;
  }
  function category_childs(){

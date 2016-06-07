@@ -8,16 +8,16 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="{{asset('img/favicon.png')}}">
 
-    <title>FlatLab - Flat & Responsive Bootstrap Admin Template</title>
+    <title>Login - Laptop Phong Linh</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('css/bootstrap-reset.css')}}" rel="stylesheet">
+    <link href="{{asset('public/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/css/bootstrap-reset.css')}}" rel="stylesheet">
     <!--external css-->
     <link href="{{asset('assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
     <!-- Custom styles for this template -->
-    <link href="{{asset('css/style.css')}}" rel="stylesheet">
-    <link href="{{asset('css/style-responsive.css')}}" rel="stylesheet" />
+    <link href="{{asset('public/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('public/css/style-responsive.css')}}" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
@@ -30,7 +30,8 @@
 
     <div class="container">
 
-      <form class="form-signin" action="">
+      <form class="form-signin" method="POST" action="{{asset('/auth/login')}}">
+      {!! csrf_field() !!}
         <h2 class="form-signin-heading">sign in now</h2>
         <div class="login-wrap">
             <input type="text" class="form-control" placeholder="User ID" autofocus>
@@ -43,17 +44,6 @@
                 </span>
             </label>
             <button class="btn btn-lg btn-login btn-block" type="submit">Sign in</button>
-            <p>or you can sign in via social network</p>
-            <div class="login-social-link">
-                <a href="#" class="facebook">
-                    <i class="icon-facebook"></i>
-                    Facebook
-                </a>
-                <a href="#" class="twitter">
-                    <i class="icon-twitter"></i>
-                    Twitter
-                </a>
-            </div>
             <div class="registration">
                 Don't have an account yet?
                 <a class="" href="registration.html">
@@ -92,8 +82,8 @@
 
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="{{asset('js/jquery.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('public/js/jquery.js')}}"></script>
+    <script src="{{asset('public/js/bootstrap.min.js')}}"></script>
 
 
   </body>

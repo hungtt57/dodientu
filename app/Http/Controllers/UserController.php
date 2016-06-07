@@ -45,7 +45,7 @@ class UserController extends Controller
         $user->name = $request -> input('fullname');
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
-        $user->user_name = $request->input('user_name');
+        $user->username = $request->input('username');
         $user->save();
         return redirect('/admin/user/list')->with(['flash_message'=>'Tạo thành công']);
     }
@@ -83,11 +83,11 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = DB::table('users')->where('id','=', $id)->first();
-        $user->user_name = $request->input('user_name');
+        $user->username = $request->input('username');
         $user->email = $request->input('email');
         DB::table('users')
             ->where('id','=', $id)
-            ->update(['user_name' => $user->user_name, 'email' => $user->email]);
+            ->update(['username' => $user->username, 'email' => $user->email]);
 
         return redirect('admin/user/list');
     }

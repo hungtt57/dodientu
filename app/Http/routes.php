@@ -19,8 +19,8 @@
 // Route::post('capnhatcart','HomeController@capnhatcart');
 
 
- Route::get('/','HomeController@index');
- Route::get('/loai-san-pham/{tenloai}','HomeController@loaisanpham');
+Route::get('/','HomeController@index');
+Route::get('/loai-san-pham/{tenloai}','HomeController@loaisanpham');
 // Route::get('/home','HomeController@index');
 // Route::get('/loaisanpham/{id}/{tenloai}','HomeController@loaisanpham');
 // Route::get('/chitietsanpham/{id}/{tenloai}','HomeController@chitietsanpham');
@@ -34,38 +34,44 @@
 // Route::get('/about','HomeController@about');
 // Route::get('/contact','HomeController@contact');
 // end frontend
+
+
 //admin
-Route::group(['prefix' => 'admin'], function () {
+Route::get('auth/logout', 'Auth\AuthController@getLogout')->after('invalidate-browser-cache');
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+//Route::group(['middleware' => 'auth'], function () {
+  Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'category'], function() { // category
-        Route::get('/create','CategoryController@create');
-        Route::post('/create','CategoryController@store');
-        Route::get('/list','CategoryController@index');
-        Route::get('/{id}/edit','CategoryController@edit');
-        Route::post('/{id}/edit','CategoryController@update');
-        Route::get('/{id}/delete','CategoryController@destroy');
-        Route::get('/','CategoryController@index');
+      Route::get('/create','CategoryController@create');
+      Route::post('/create','CategoryController@store');
+      Route::get('/list','CategoryController@index');
+      Route::get('/{id}/edit','CategoryController@edit');
+      Route::post('/{id}/edit','CategoryController@update');
+      Route::get('/{id}/delete','CategoryController@destroy');
+      Route::get('/','CategoryController@index');
     });
     Route::get('/dashboard','AdminController@index'); // admin dashboard
     Route::get('/','AdminController@index');
-     Route::group(['prefix' => 'user'], function() {
-        Route::get('/create', ['as' => 'user_create', 'uses' => 'UserController@create']);
-        Route::post('/create', ['as' => 'user_store', 'uses' =>  'UserController@store']);
-        Route::get('/list', ['as' => 'user_list', 'uses' =>  'UserController@index']);
-        Route::get('/{id}/edit', ['as' => 'user_edit', 'uses' =>  'UserController@edit']);
-        Route::post('/{id}/edit', ['as' => 'user_update', 'uses' =>  'UserController@update']);
-        Route::get('/{id}/delete', ['as' => 'user_destroy', 'uses' =>  'UserController@destroy']);
-        Route::get('/', 'UserController@index');
-     });
-     Route::group(['prefix' => 'product'],function(){
-        Route::get('/','ProductController@index');
+    Route::group(['prefix' => 'user'], function() {
+      Route::get('/create', ['as' => 'user_create', 'uses' => 'UserController@create']);
+      Route::post('/create', ['as' => 'user_store', 'uses' =>  'UserController@store']);
+      Route::get('/list', ['as' => 'user_list', 'uses' =>  'UserController@index']);
+      Route::get('/{id}/edit', ['as' => 'user_edit', 'uses' =>  'UserController@edit']);
+      Route::post('/{id}/edit', ['as' => 'user_update', 'uses' =>  'UserController@update']);
+      Route::get('/{id}/delete', ['as' => 'user_destroy', 'uses' =>  'UserController@destroy']);
+      Route::get('/', 'UserController@index');
+    });
+    Route::group(['prefix' => 'product'],function(){
+      Route::get('/','ProductController@index');
       
-        Route::get('/create','ProductController@create');
-        Route::post('/create','ProductController@store');
-        Route::get('/{id}/show','ProductController@show');
-        Route::get('/{id}/edit','ProductController@edit');
-        Route::post('/{id}/edit','ProductController@update');
-        Route::get('/{id}/delete','ProductController@destroy');
-     });
+      Route::get('/create','ProductController@create');
+      Route::post('/create','ProductController@store');
+      Route::get('/{id}/show','ProductController@show');
+      Route::get('/{id}/edit','ProductController@edit');
+      Route::post('/{id}/edit','ProductController@update');
+      Route::get('/{id}/delete','ProductController@destroy');
+    });
       // Route::group(['prefix' => 'order'],function(){
       //     Route::get('/','OrderController@index');
       //     Route::get('/list','OrderController@index');
@@ -76,4 +82,5 @@ Route::group(['prefix' => 'admin'], function () {
       //      Route::get('/xoa_order_detail','OrderController@xoa_order_detail');
       //     Route::get('/{id}/show','OrderController@show');
       // });
-});
+  });
+//});

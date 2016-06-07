@@ -25,7 +25,7 @@ class CheckUserRequest extends Request
     {
         return [
            'fullname' => 'required|max:255',
-           'user_name' => 'required|min:8',
+           'username' => 'required|min:8',
            'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6',
 
@@ -34,8 +34,8 @@ class CheckUserRequest extends Request
     public function messages(){
         return [
             'fullname.required' => 'Vui lòng nhập tên',
-            'user_name.requỉed'=>'Vui lòng nhập user_name',
-            'user_name.min' => 'Tên đăng nhập phải ít nhất 8 ký tự',
+            'username.requỉed'=>'Vui lòng nhập username',
+            'username.min' => 'Tên đăng nhập phải ít nhất 8 ký tự',
             'email.required' => 'Vui lòng nhập email',
             'email.email' => 'Bạn phải nhập đúng 1 định dạng email',
             'email.unique' => 'Địa chỉ email này đã có ngươi sử dụng',

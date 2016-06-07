@@ -20,5 +20,3 @@ class EntityNotFoundException extends InvalidArgumentException
         parent::__construct("Queueable entity [{$type}] not found for ID [{$id}].");
     }
 }
-
-

@@ -8,7 +8,7 @@
 		    <div class="form-group">
 			    	<label class="col-md-2 control-label" for="name">User Name: </label>
 			    <div class="col-md-10">
-			    	<input class="form-control" value="{{$user->user_name}}" type="text" name="user_name" id="user_name">
+			    	<input class="form-control" value="{{$user->user_name}}" type="text" name="username" id="username">
 			    </div>
 	    	</div>
 	    	<div class="form-group">
@@ -19,7 +19,7 @@
 	    	</div>    	
 	    	<div class="form-group">
 	    		<input type="submit" value="Edit User" class="btn btn-success" />
-	    		<a type="button"  class="btn btn-info" href="{{asset('admin/slider/list')}}">Back</a>
+	    		<a type="button"  class="btn btn-info" href="{{asset('admin/user/list')}}">Back</a>
 	    	</div>
 </form>
 

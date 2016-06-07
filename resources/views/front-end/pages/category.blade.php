@@ -2,52 +2,18 @@
 @section('content')
  <!-- breadcrumb -->
         <div class="breadcrumb clearfix">
-            <a class="home" href="#" title="Return to Home">Home</a>
+            <a class="home" href="{{asset('/')}}" title="Return to Home">Trang chủ</a>
             <span class="navigation-pipe">&nbsp;</span>
-            <span class="navigation_page">Fashion</span>
+            <span class="navigation_page">{{$name_cate->name}}</span>
         </div>
         <!-- ./breadcrumb -->
         <!-- row -->
         <div class="row">
             <!-- Left colunm -->
             <div class="column col-xs-12 col-sm-3" id="left_column">
-                <!-- block category -->
-                <div class="block left-module">
-                    <p class="title_block">Product types</p>
-                    <div class="block_content">
-                        <!-- layered -->
-                        <div class="layered layered-category">
-                            <div class="layered-content">
-                                <ul class="tree-menu">
-                                    <li class="active">
-                                        <span></span><a href="#">Tops</a>
-                                        <ul>
-                                            <li><span></span><a href="#">T-shirts</a></li>
-                                            <li><span></span><a href="#">Dresses</a></li>
-                                            <li><span></span><a href="#">Casual</a></li>
-                                            <li><span></span><a href="#">Evening</a></li>
-                                            <li><span></span><a href="#">Summer</a></li>
-                                            <li><span></span><a href="#">Bags & Shoes</a></li>
-                                            <li><span></span><a href="#"><span></span>Blouses</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><span></span><a href="#">T-shirts</a></li>
-                                    <li><span></span><a href="#">Dresses</a></li>
-                                    <li><span></span><a href="#">Jackets and coats </a></li>
-                                    <li><span></span><a href="#">Knitted</a></li>
-                                    <li><span></span><a href="#">Pants</a></li>
-                                    <li><span></span><a href="#">Bags & Shoes</a></li>
-                                    <li><span></span><a href="#">Best selling</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- ./layered -->
-                    </div>
-                </div>
-                <!-- ./block category  -->
                 <!-- block filter -->
                 <div class="block left-module">
-                    <p class="title_block">Filter selection</p>
+                    <p class="title_block">Lọc sản phẩm</p>
                     <div class="block_content">
                         <!-- layered -->
                         <div class="layered layered-filter-price">
@@ -342,42 +308,19 @@
                 <div class="category-slider">
                     <ul class="owl-carousel owl-style2" data-dots="false" data-loop="true" data-nav = "true" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1">
                         <li>
-                            <img src="assets/data/category-slide.jpg" alt="category-slider">
+                            <img src="{{asset('public/assets/data/category-slide.jpg')}}" alt="category-slider">
                         </li>
                         <li>
-                            <img src="assets/data/slide-cart2.jpg" alt="category-slider">
+                            <img src="{{asset('public/assets/data/slide-cart2.jpg')}}" alt="category-slider">
                         </li>
                     </ul>
                 </div>
                 <!-- ./category-slider -->
-                <!-- subcategories -->
-                <div class="subcategories">
-                    <ul>
-                        <li class="current-categorie">
-                            <a href="#">Women's Fashion</a>
-                        </li>
-                        <li>
-                            <a href="#">Tops</a>
-                        </li>
-                        <li>
-                            <a href="#">Dresses</a>
-                        </li>
-                        <li>
-                            <a href="#">Bags & Shoes</a>
-                        </li>
-                        <li>
-                            <a href="#">Pants</a>
-                        </li>
-                        <li>
-                            <a href="#">Blouses</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- ./subcategories -->
+                
                 <!-- view-product-list-->
                 <div id="view-product-list" class="view-product-list">
                     <h2 class="page-heading">
-                        <span class="page-heading-title">Women</span>
+                        <span class="page-heading-title">{{$name_cate->name}}</span>
                     </h2>
                     <ul class="display-product-option">
                         <li class="view-as-grid selected">

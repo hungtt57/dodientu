@@ -25,7 +25,7 @@
 	<tbody>
 	@foreach($users as $key =>$user)
 		<tr>
-			<td> {{ $user->user_name}}</td>
+			<td> {{ $user->username}}</td>
 			<td> {{ $user->name}}</td>
 			<td> {{ $user->email}}</td>
 			<td> {{ $user->created_at}}</td>

@@ -9,7 +9,7 @@
 							<div class="form-group">
 							    	<label class="col-md-2 control-label" for="user_name">User Name: </label>
 							    <div class="col-md-10">
-							    	<input class="form-control" tabindex="1" placeholder="user_name..." type="text" name="user_name" id="user_name">
+							    	<input class="form-control" tabindex="1" placeholder="user_name..." type="text" name="username" id="username">
 							    </div>
 					    	</div>
 						    <div class="form-group">
