@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+<<<<<<< HEAD
     'App\\Category' => $baseDir . '/app/Category.php',
     'App\\Console\\Commands\\CrawlerMuathuoc' => $baseDir . '/app/Console/Commands/CrawLerMuathuoc.php',
     'App\\Console\\Commands\\CrawlerTintuc' => $baseDir . '/app/Console/Commands/CrawLerTintuc.php',
@@ -69,6 +70,11 @@ return array(
     'Cron\\MinutesField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/MinutesField.php',
     'Cron\\MonthField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/MonthField.php',
     'Cron\\YearField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/YearField.php',
+=======
+    'CreateCategoriesTable' => $baseDir . '/database/migrations/2016_06_07_101811_create_categories_table.php',
+    'CreateProductsTable' => $baseDir . '/database/migrations/2016_06_07_101826_create_products_table.php',
+    'CreateUsersTables' => $baseDir . '/database/migrations/2016_06_08_095541_create_users_tables.php',
+>>>>>>> 801f3bb1e4d3473811d5160aac5be0244f63eb23
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'Diff' => $vendorDir . '/phpspec/php-diff/lib/Diff.php',
     'Diff_Renderer_Abstract' => $vendorDir . '/phpspec/php-diff/lib/Diff/Renderer/Abstract.php',

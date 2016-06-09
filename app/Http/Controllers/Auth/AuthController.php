@@ -6,6 +6,11 @@ use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Request;
+use Input;
+use Auth;
+use Session;
+use Redirect;
 
 class AuthController extends Controller
 {
@@ -62,5 +67,56 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+      public function getLogin() {
+    
+        return view('auth/login');
+    }
+      public function postLogin(Request $request)
+    {
+           
+        $validator = Validator::make(Input::all(),
+            array(
+                'username' => 'required',        
+            )
+        );
+        $userName = Input::get('username');
+        $password = Input::get('password');
+        
+      
+            if($validator->fails()) {
+                return redirect('auth/login')
+                            ->withErrors($validator);
+            } else {
+
+               // echo $userName; echo $password;die;
+                        if (Auth::attempt(array('username' => $userName, 'password' => $password)))
+                        {
+
+                            return redirect('admin/dashboard');
+
+                        }
+                        if (Auth::attempt(array('email' => $userName, 'password' => $password)))
+                        {
+
+                                return redirect('admin/dashboard');
+
+                        }
+                       
+                        return Redirect::back()->withInput()->with('message','Email hoặc mật khẩu bị sai'); 
+
+                    
+                }
+
+                return Redirect::back()->with('message','Tên Đăng nhập hoặc mật khẩu bị sai');
+
+
+
+    }
+      public function getLogout()
+    {
+        Auth::logout();
+        Session::flush();
+        return redirect('/');
     }
 }
