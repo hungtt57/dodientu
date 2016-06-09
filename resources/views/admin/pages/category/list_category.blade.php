@@ -4,7 +4,7 @@
           <section class="wrapper">
           <h1>Danh sách danh mục</h1>
 		@include('admin.includes.alert')
-	<table id="example1" class="display"  class="table table-bordered table-hover" cellspacing="0" width="100%">
+	<table id="example1" class="display"  class="table " cellspacing="0" width="100%">
 	<thead>
 		<tr class="bg-info">
 			<th>STT</th>
@@ -23,9 +23,9 @@
 			<td> {{ $category->created_at}}</td>
 			
 			<td>
-					<a href="{{ asset('admin/category/'.$category->id.'/edit') }}" title="Sửa "><span class="glyphicon glyphicon-edit" style="color:blue"></span></a>
-						<a onclick="return xacnhanxoa ('Bạn có chắc muốn xóa không!!')" href="{{ asset('admin/category/'.$category->id.'/delete')}}" title="Xóa "><span class="glyphicon glyphicon-trash" style="color:red"></span></a>
-						</td>
+			<a href="{{ asset('admin/category/'.$category->id.'/edit') }}" title="Sửa "><span class="glyphicon glyphicon-edit" style="color:blue"></span></a>
+			<a onclick="return xacnhanxoa ('Bạn có chắc muốn xóa không!!')" href="{{ asset('admin/category/'.$category->id.'/delete')}}" title="Xóa "><span class="glyphicon glyphicon-trash" style="color:red"></span></a>
+			</td>
 		<?php $stt++; ?>
 		</tr>
 	@endforeach
