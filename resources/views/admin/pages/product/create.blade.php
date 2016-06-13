@@ -1,6 +1,8 @@
 @extends('admin.layout.master')
 @section('css')
 <script src="{{asset('public/admin/ckeditor/ckeditor.js')}}"></script>
+<script src="{{asset('public/admin/ckfinder/ckfinder.js')}}"></script>
+
 @endsection
 @section('content')
 <section id="main-content">
@@ -19,6 +21,7 @@
 					</ul>
 				</div>	
 				@endif
+
 
 				<div class="form-group">
 				<label class="col-md-2 control-label" for="name_category">Tên sản phẩm</label>
@@ -98,10 +101,21 @@
 				    	<div class="form-group">
 						    	<label class="col-md-2 control-label" for="name_category">Chọn ảnh đại diện</label>
 						    <div class="col-md-10">
-						    	   <input id="image" class="form-control"  name="image" type="file">
+						    	
+						    	  <input type="text" style='display:none' name="image" id="Image" />
+   								 <div  value="Duyệt ảnh" class='button_chooseImage ' onclick="BrowseServer();">Chọn ảnh</div>
+						    	 <img src="" alt="" style="display:none" width="150px" class='col-md-4' id='imageAvatar'>
 						    </div>
 				    	</div>
+	
 
+   						<div class="form-group">
+   							<label class="col-md-2 control-label" for="name_category">Chọn ảnh chi tiết</label>
+   							 <div class="col-md-10">
+   							   <div value="Duyệt ảnh chi tiết" class='button_chooseImage'  id='chooseImageDetail'>Chọn ảnh chi tiết</div>
+                      			 <div id="insert"></div>
+                       	</div>
+   						</div>
 
 				<div class="form-group">
 					<input type="submit" value="Tạo sản phẩm" class="btn btn-success" />
@@ -111,4 +125,59 @@
 		</form>
 	</section>
 </section>
+	
+
+	
+
+@endsection
+@section('js')
+
+  <script type="text/javascript">
+        function BrowseServer() {
+            var finder = new CKFinder();
+            //finder.basePath = '../';
+
+            finder.selectActionFunction = SetFileField;
+            finder.popup();
+        }
+        function SetFileField(fileUrl) {
+            document.getElementById('Image').value = fileUrl;
+               document.getElementById('imageAvatar').style.display = 'block';
+            document.getElementById('imageAvatar').src = fileUrl;
+        }
+
+ 
+    </script>
+
+	  <script type="text/javascript">
+	  $(document).ready(function() {
+
+        function SetFileField1(fileUrl) {
+        	
+        	 $("#insert").append(' <div class="baongoai" ><input type="text" style="display:none;" class="col-md-6" name="imageDetail[]" id="imageDetail'+fileUrl+'" /><i class="fa fa-times icon_delImage"></i><img src="'+ fileUrl+'" alt="" width="200px" ></div>');
+            
+         
+         	document.getElementById('imageDetail'+fileUrl).value =  fileUrl ;
+        }
+
+	  		$('#chooseImageDetail').click(function(){
+	  		var finder1 = new CKFinder();
+            //finder.basePath = '../';
+
+            finder1.selectActionFunction = SetFileField1;
+            finder1.popup();
+	  		});
+     
+
+ 		});
+
+    </script>
+
+	<script>
+		$(document).on('click', '.icon_delImage', function() {
+         	var baongoai = $(this).parent();
+         	var currentId = baongoai.attr('id');
+         	baongoai.remove();
+      });
+	</script>
 @endsection

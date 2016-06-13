@@ -24,22 +24,17 @@ class CheckUserRequest extends Request
     public function rules()
     {
         return [
-           'fullname' => 'required|max:255',
-           'username' => 'required|min:8',
-           'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6',
+           'username' => 'required|min:6',
+             'password' => 'required|min:6',
 
         ];
     }
     public function messages(){
         return [
-            'fullname.required' => 'Vui lòng nhập tên',
-            'username.requỉed'=>'Vui lòng nhập username',
-            'username.min' => 'Tên đăng nhập phải ít nhất 8 ký tự',
-            'email.required' => 'Vui lòng nhập email',
-            'email.email' => 'Bạn phải nhập đúng 1 định dạng email',
-            'email.unique' => 'Địa chỉ email này đã có ngươi sử dụng',
-            'password.requỉed'=>'Vui lòng nhập password',
+      
+            'username.required'=>'Vui lòng nhập username',
+            'username.min' => 'Tên đăng nhập phải ít nhất 6 ký tự',
+            'password.required'=>'Vui lòng nhập password',
             'password.min' => 'Mật khẩu phải ít nhất 6 ký tự'
         ];
     }

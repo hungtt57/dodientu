@@ -2,7 +2,7 @@
 @section('content')
   	<section id="main-content">
           <section class="wrapper">
-          <h1>List User</h1><a href="{{asset('admin/user/create')}}" class="btn btn-success">Create User</a>
+          <h1>Danh sách tài khoản</h1><a href="{{asset('admin/user/create')}}" class="btn btn-success">Tạo tài khoản</a>
 	 <div class="col-lg-12">
           @if (Session::has('flash_message'))
             <div class="alert alert-success">
@@ -18,8 +18,8 @@
 			<th>FullName</th>
 			<th>Email</th>
 			<th>Created_at</th>
-			<th>Edit</th>
-			<th>Delete</th>
+			<th>Action</th>
+			
 		</tr>
 	</thead>
 	<tbody>
@@ -29,8 +29,15 @@
 			<td> {{ $user->name}}</td>
 			<td> {{ $user->email}}</td>
 			<td> {{ $user->created_at}}</td>
-			<td><a href="{{ asset('admin/user/'.$user->id.'/edit') }}" class="btn btn-warning">Edit</a></td>
-			<td><a onclick="return xacnhanxoa ('Bạn có chắc muốn xóa không!!')" href="{{ asset('admin/user/'.$user->id.'/delete')}}" class="btn btn-danger">Delete</a></td>
+			<td>
+
+
+	
+			<a href="{{ asset('admin/user/'.$user->id.'/edit') }}" title="Sửa "><span class="glyphicon glyphicon-edit" style="color:blue"></span></a>
+
+	<a onclick="return xacnhanxoa ('Bạn có chắc muốn xóa không!!')" href="{{ asset('admin/user/'.$user->id.'/delete')}}" title="Xóa "><span class="glyphicon glyphicon-trash" style="color:red"></span></a>
+
+			</td>
 		
 			</tr>
 	@endforeach

@@ -18,8 +18,14 @@ class CategoryController extends Controller
      */
     public function index()
     {
-       
-       $allCategories= Category::all();
+        if(!Session::has('categories_all')){
+             $allCategories= Category::all();
+            Session::put('categories_all',$allCategories);
+        }else{
+            $allCategories = Session::get('categories_all'); 
+        }
+
+
        return view('admin.pages.category.list_category',['allCategories'=>$allCategories]);
     }
      /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Product;
+use App\ImageDetail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateProductRequest;
@@ -58,7 +59,7 @@ class ProductController extends Controller
      */
     public function store(CreateProductRequest $request)
     {
-      
+       
         $product= new Product;
         $product->name = $request->input('name');
         $product->alias = str_slug($product->name);
@@ -75,18 +76,22 @@ class ProductController extends Controller
         
         $product->category_id = $request->input('category_id');
 
-        // $anhdaidien = $request->file('image');
-
-        //  if($anhdaidien){
-        //       $filename = str_slug($product->name).'.' . $anhdaidien->getClientOriginalExtension();
-        //     $path = public_path('image/anhdaidien/' . $filename);
-        //         Image::make($anhdaidien->getRealPath())->resize(400, 520)->save($path);
-        //         $product->anhdaidien= 'public/image/anhdaidien/' . $filename;
-        // }
 
 
-
+        $product->image = $request->input('image');
          $product->save();
+        if($request->input('imageDetail')==null){
+           
+        }else{
+            $imageDetail = $request->input('imageDetail');
+            foreach($imageDetail as $key => $value) {
+                $image = new ImageDetail;
+                $image->link = $value;
+                $product->imageDetail()->save($image);
+            }
+        }
+
+ 
         return redirect('admin/product')->with(['success'=>'Tạo thành công']);
     }
     /**
@@ -129,7 +134,8 @@ class ProductController extends Controller
         }
 
         $product=Product::find($id);
-        return view('admin.pages.product.edit',compact('product'))->with('categories',$allCategories);
+        $image = $product->imageDetail()->get();
+        return view('admin.pages.product.edit',compact('product'))->with('categories',$allCategories)->with('imageDetail',$image);
     }
 
     /**
@@ -141,6 +147,7 @@ class ProductController extends Controller
      */
     public function update(CheckEditProductRequest $request, $id)
     {
+       
         $product=Product::find($id);
          $product->name = $request->input('name');
         $product->alias = str_slug($product->name);
@@ -155,25 +162,26 @@ class ProductController extends Controller
             $product->sale = number_format((($product->old_price-$product->new_price)/$product->old_price)*100);
         }
         $product->category_id = $request->input('category_id');
-        //   if(!empty($request->file('anhdaidien'))){
-        //     $anhdaidien=$request->file('anhdaidien');
-        //          File::delete($product->anhdaidien);
-        //         File::delete($product->thumb);
+           $product->image = $request->input('image');
+         $product->save();
 
-        //              $filename = str_slug($product->ten).'.' . $anhdaidien->getClientOriginalExtension();
-        //     $path = public_path().'/image/product/anhdaidien/' . $filename;
-        //         Image::make($anhdaidien->getRealPath())->resize(400, 520)->save($path);
-        //         $product->anhdaidien= 'public/image/product/anhdaidien/' . $filename;
+        $imageDetail = $product->imageDetail()->get();
+        foreach ($imageDetail as $key => $value) {
+           $value->delete();
+        }
 
-        //     $paththumb= public_path().'/image/product/thumb/thumb' . $filename;
-        //      Image::make($anhdaidien->getRealPath())->resize(200, 200)->save($paththumb);
-        //       $product->thumb= 'public/image/product/thumb/thumb' . $filename;
-        
-        // }
+        if($request->input('imageDetail')==null){
+           
+        }else{
+            $imageDetail = $request->input('imageDetail');
+            foreach($imageDetail as $key => $value) {
+                $image = new ImageDetail;
+                $image->link = $value;
+                $product->imageDetail()->save($image);
+            }
+        }
 
-        $product->save();
-
-        return redirect('admin/product')->with(['info'=>'Tạo thành công']);
+        return redirect('admin/product')->with(['info'=>'Sửa thành công']);
     }
 
     /**
@@ -185,8 +193,6 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product=Product::find($id);
-       File::delete($product->anhdaidien);
-        File::delete($product->thumb);
         $product->delete();
         return redirect('admin/product/')->with(['danger'=>'Xóa thành công']);
 

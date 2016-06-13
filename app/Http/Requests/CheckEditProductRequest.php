@@ -23,12 +23,14 @@ class CheckEditProductRequest extends Request
      */
     public function rules()
     {
-        $old_price = Input::get('old_price');
+        $old_price = intval(Input::get('old_price'));
+
         return [
            'name' => 'required|min:2',
-           'image' => 'mimes:jpeg,jpg,png',
-           'old_price' => 'required'
-           // 'new_price' => "min:100"
+           'image' => 'required',
+           'old_price' => 'required',
+           'new_price' => 'numeric|max:'.$old_price
+      
         ];
     }
     public function messages(){
@@ -36,8 +38,8 @@ class CheckEditProductRequest extends Request
             'name.required' => 'Vui lòng nhập tên sản phẩm',
             'name.min'=>'Tên phải ít nhất 2 kí tự',
              'old_price.required' => 'Nhập giá hiện tại của sản phẩm',
-             'image.mimes' => 'Ảnh đại diện phải là định dạng jpeg,jpg,png',
-             // 'new_price.min' => 'Giá mới phải nhỏ hơn giá hiện tại'
+             'image.required' => 'Vui lòng chọn ảnh đại diện',
+             'new_price.max' => 'Giá mới không được cao hơn giá hiện tại'
         ];
     }
 }

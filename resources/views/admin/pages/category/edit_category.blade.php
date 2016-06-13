@@ -9,7 +9,7 @@
 					    <div class="form-group">
 						    	<label class="col-md-2 control-label" for="name">Tên danh mục: </label>
 						    <div class="col-md-4">
-						    	<input class="form-control" value="{{$category->ten}}" type="text" name="ten" id="ten">
+						    	<input class="form-control" value="{{$category->name}}" type="text" name="name" id="name">
 						    </div>
 				    	</div>
 

@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="{{asset('public/admin/img/favicon.png')}}">
 
     <title>Admin Manager</title>
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
     <link href="{{asset('public/admin/css/bootstrap.css')}}" rel="stylesheet">
     <link href="{{asset('public/admin/css/bootstrap-reset.css')}}" rel="stylesheet">

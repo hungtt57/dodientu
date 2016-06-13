@@ -25,7 +25,7 @@ class CreateProductRequest extends Request
     {
         return [
            'name' => 'required|min:2|unique:products,name',
-           'image' => 'required|mimes:jpeg,jpg,png',
+           'image' => 'required',
            'old_price' => 'required',
         ];
     }
@@ -34,9 +34,8 @@ class CreateProductRequest extends Request
             'name.required' => 'Vui lòng nhập tên sản phẩm',
             'name.min'=>'Tên phải ít nhất 2 kí tự',
             'name.unique' => 'Tên sản phẩm bị trùng',
-             'image.required' => 'Chọn ảnh đại diện',
-             'old_price.required' => 'Nhập giá hiện tại của sản phẩm',
-             'image.mimes' => 'Ảnh đại diện phải là định dạng jpeg,jpg,png',
+             'image.required' => 'Vui lòng chọn ảnh đại diện',
+             'old_price.required' => 'Nhập giá hiện tại của sản phẩm'
         ];
     }
 }

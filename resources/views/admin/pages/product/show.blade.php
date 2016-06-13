@@ -31,7 +31,7 @@
 
 			<div class="col-xs-4">
 
-				<img class="img_product_show" src="{{asset($product->image)}}">
+				<img class="img_product_show" src="{{$product->image}}">
 
 			</div>		
 			<div class="col-xs-8">

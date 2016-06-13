@@ -1,52 +1,29 @@
-/**
- * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
- */
 
-CKEDITOR.editorConfig = function( config ) {
-	// Define changes to default configuration here.
-	// For complete reference see:
-	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
+CKEDITOR.editorConfig = function( config )
+{
+        // Define changes to default configuration here. For example:
+    config.language = 'en';
+    
+        // config.uiColor = '#AADC6E';
+        
+        config.toolbar_Full = [
+           
+            ];
+        
+        config.entities = false;
+        //config.entities_latin = false;
+        
 
-	// The toolbar groups arrangement, optimized for two toolbar rows.
-	config.toolbarGroups = [
-		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
-		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
-		{ name: 'links' },
-		{ name: 'insert' },
-		{ name: 'forms' },
-		{ name: 'tools' },
-		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
-		{ name: 'others' },
-		'/',
-		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
-		{ name: 'styles' },
-		{ name: 'colors' },
-		{ name: 'about' }
-	];
+        config.filebrowserBrowseUrl = 'http://localhost/dodientu/public/admin/ckfinder/ckfinder.html';
 
-	// Remove some buttons provided by the standard plugins, which are
-	// not needed in the Standard(s) toolbar.
-	config.removeButtons = 'Underline,Subscript,Superscript';
+        config.filebrowserImageBrowseUrl = 'http://localhost/dodientu/public/admin/ckfinder/ckfinder.html?type=Images';
 
-	// Set the most common block elements.
-	config.format_tags = 'p;h1;h2;h3;pre';
+        config.filebrowserFlashBrowseUrl = 'http://localhost/dodientu/public/admin/ckfinder/ckfinder.html?type=Flash';
 
-	// Simplify the dialog windows.
-	config.removeDialogTabs = 'image:advanced;link:advanced';
-	config.enterMode = CKEDITOR.ENTER_BR;
-	config.filebrowserBrowseUrl = '/ckfinder/ckfinder.html';
+        config.filebrowserUploadUrl = 'http://localhost/dodientu/public/admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
 
-	config.filebrowserImageBrowseUrl = '/public/admin/ckfinder/ckfinder.html?type=Images';
+        config.filebrowserImageUploadUrl = 'http://localhost/dodientu/public/admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images';
 
-	config.filebrowserFlashBrowseUrl = '/public/admin/ckfinder/ckfinder.html?type=Flash';
+        config.filebrowserFlashUploadUrl = 'http://localhost/dodientu/public/admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash';
 
-	config.filebrowserUploadUrl = '/public/admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
-
-	config.filebrowserImageUploadUrl = '/public/admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images';
-
-	config.filebrowserFlashUploadUrl = '/public/admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash';
-
- 
-};
+};  
