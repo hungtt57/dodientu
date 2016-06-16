@@ -4,7 +4,7 @@
             <div id="introduce-box" class="row">
                 <div class="col-md-3">
                     <div id="address-box">
-                        <a href="#"><img src="assets/data/introduce-logo.png" alt="" /></a>
+                        <a href="#"><img src="{{asset('public/assets/data/introduce-logo.png')}}" alt="" /></a>
                         <div id="address-list">
                             <div class="tit-name">Địa chỉ:</div>
                             <div class="tit-contain">99 Ngõ Núi Trúc, Giang Văn Minh, Ba Đình, Hà Nội</div>

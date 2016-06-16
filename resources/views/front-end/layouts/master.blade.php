@@ -19,6 +19,7 @@
     <title>Laptop Phong Linh - Chuyên Laptop USA chính hãng</title>
 </head>
 <body class="category-page">
+
 <!-- HEADER -->
 @include('front-end.includes.header')
 
@@ -35,6 +36,7 @@
 
 
 <a href="#" class="scroll_top" title="Scroll to Top" style="display: inline;">Scroll</a>
+
 <!-- Script-->
 <script type="text/javascript" src="{{asset('public/assets/lib/jquery/jquery-1.11.2.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/assets/lib/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -42,15 +44,14 @@
 <script type="text/javascript" src="{{asset('public/assets/lib/jquery.bxslider/jquery.bxslider.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/assets/lib/owl.carousel/owl.carousel.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/assets/lib/jquery.countdown/jquery.countdown.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('public/assets/js/jquery.actual.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('public/assets/js/theme-script.js')}}"></script>
 
 <script type="text/javascript" src="{{asset('public/assets/lib/jquery-ui/jquery-ui.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/assets/js/jquery.actual.min.js')}}"></script>
 
-<script type="text/javascript" src="{{asset('puclic/assets/js/theme-script.js')}}"></script>
+<script type="text/javascript" src="{{asset('public/assets/js/theme-script.js')}}"></script>
 @yield('script')
 </body>
 
 <!-- Mirrored from kutethemes.com/demo/kuteshop/html/category.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 Jul 2015 07:29:23 GMT -->
 </html>
+

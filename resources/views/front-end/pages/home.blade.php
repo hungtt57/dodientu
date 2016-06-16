@@ -18,17 +18,7 @@
     <title>Laptop Phong Linh - Chuyên Laptop USA chính hãng</title>
 </head>
 <body class="home">
-<!-- TOP BANNER -->
-<!--<div id="top-banner" class="top-banner">
-    <div class="bg-overlay"></div>
-    <div class="container">
-        <h1>Special Offer!</h1>
-        <h2>Additional 40% OFF For Men & Women Clothings</h2>
-        <span>This offer is for online only 7PM to middnight ends in 30th July 2015</span>
-        <span class="btn-close"></span>
-    </div>
-</div>-->
-<!-- HEADER -->
+
 <div id="header" class="header">
     <div class="top-header">
         <div class="container">
@@ -39,18 +29,6 @@
             <div class="top-bar-social">
                 <a href="https://www.facebook.com/laptopphonglinh/"><i class="fa fa-facebook"></i></a>
                 
-            </div>
-            
-          
-            <div id="user-info-top" class="user-info pull-right">
-                <div class="dropdown">
-                    <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><span>My Account</span></a>
-                    <ul class="dropdown-menu mega_dropdown" role="menu">
-                        <li><a href="login.html">Đăng xuất</a></li>
-                        <li><a href="#">Hồ sơ cá nhân</a></li>
-                        
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
@@ -117,7 +95,7 @@
                                                 <ul class="block">
                                                  @for ($j = $i; $j < $i+3; $j++)
                                                   @if($j<count($category_childs))   
-                                                    <li class="link_container"><a href="{{$category_childs[$j]->id}}">{{$category_childs[$j]->name}}</a></li> 
+                                                    <li class="link_container"><a href="{{asset('/loai-san-pham/'.$category_childs[$j]->alias)}}">{{$category_childs[$j]->name}}</a></li> 
                                                 @endif
                                                 @endfor   
                                                 </ul>
@@ -168,7 +146,7 @@
                     </div>
                 </div>
                 <div class="header-banner banner-opacity">
-                    <a href="#"><img alt="Funky roots" src="public/assets/data/ads1.jpg" /></a>
+                    <a href="#"><img alt="Funky roots" src="public/assets/data/vWsVeOW.gif" /></a>
                 </div>
             </div>
         </div>
@@ -183,7 +161,7 @@
                 <img alt="services" src="public/assets/data/s1.png" />
             </div>
             <div class="info">
-                <a href="#"><h3>Vận chuyển toàn quốc</h3></a>
+                <a href=""><h3>Vận chuyển toàn quốc</h3></a>
                 <span>Ship hàng tận nhà</span>
             </div>
         </div>
@@ -192,7 +170,7 @@
                 <img alt="services" src="public/assets/data/s2.png" />
             </div>
             <div class="info">
-                <a href="#"><h3>Bảo hành cực tốt</h3></a>
+                <a href=""><h3>Bảo hành cực tốt</h3></a>
                 <span>Lỗi thiết bị 1 đổi 1</span>
             </div>
         </div>
@@ -202,7 +180,7 @@
             </div>
             
             <div class="info" >
-                <a href="#"><h3>Hỗ trợ 24/7</h3></a>
+                <a href=""><h3>Hỗ trợ 24/7</h3></a>
                 <span>Đội ngũ hỗ trợ nhiệt tình.</span>
             </div>
         </div>
@@ -211,7 +189,7 @@
                 <img alt="services" src="public/assets/data/s4.png" />
             </div>
             <div class="info">
-                <a href="#"><h3>Giá luôn tốt nhất</h3></a>
+                <a href=""><h3>Giá luôn tốt nhất</h3></a>
                 <span>Cam kết giá thấp nhất thị trường</span>
             </div>
         </div>
@@ -219,7 +197,7 @@
 </div>
 <!-- end services -->
 
-<div class="page-top">
+<!-- <div class="page-top">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-9 page-top-left">
@@ -256,13 +234,7 @@
                                                 <span class="price product-price">$38,95</span>
                                                 <span class="price old-price">$52,00</span>
                                             </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
+                                            
                                         </div>
                                     </li>
                                     <li>
@@ -283,13 +255,7 @@
                                                 <span class="price product-price">$38,95</span>
                                                 <span class="price old-price">$52,00</span>
                                             </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
+                                            
                                         </div>
                                     </li>
                                     <li>
@@ -313,13 +279,7 @@
                                                 <span class="price product-price">$38,95</span>
                                                 <span class="price old-price">$52,00</span>
                                             </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
+                                           
                                         </div>
                                     </li>
                                     <li>
@@ -340,13 +300,7 @@
                                                 <span class="price product-price">$38,95</span>
                                                 <span class="price old-price">$52,00</span>
                                             </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
+                                           
                                         </div>
                                     </li>
                                 </ul>
@@ -372,13 +326,7 @@
                                                 <span class="price product-price">$38,95</span>
                                                 <span class="price old-price">$52,00</span>
                                             </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
+                                           
                                         </div>
                                     </li>
                                     <li>
@@ -400,13 +348,7 @@
                                                 <span class="price product-price">$38,95</span>
                                                 <span class="price old-price">$52,00</span>
                                             </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
+                                          
                                         </div>
                                     </li>
                                     <li>
@@ -427,13 +369,7 @@
                                                 <span class="price product-price">$38,95</span>
                                                 <span class="price old-price">$52,00</span>
                                             </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
+                                         
                                         </div>
                                     </li>
                                     <li>
@@ -454,13 +390,7 @@
                                                 <span class="price product-price">$38,95</span>
                                                 <span class="price old-price">$52,00</span>
                                             </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
+                                      
                                         </div>
                                     </li>
                                 </ul>
@@ -485,13 +415,7 @@
                                                 <span class="price product-price">$38,95</span>
                                                 <span class="price old-price">$52,00</span>
                                             </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
+                                        
                                         </div>
                                     </li>
                                     <li>
@@ -512,13 +436,7 @@
                                                 <span class="price product-price">$38,95</span>
                                                 <span class="price old-price">$52,00</span>
                                             </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
+                                          
                                         </div>
                                     </li>
                                     <li>
@@ -539,13 +457,7 @@
                                                 <span class="price product-price">$38,95</span>
                                                 <span class="price old-price">$52,00</span>
                                             </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
+                                        
                                         </div>
                                     </li>
                                     <li>
@@ -566,13 +478,7 @@
                                                 <span class="price product-price">$38,95</span>
                                                 <span class="price old-price">$52,00</span>
                                             </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
+                                          
                                         </div>
                                     </li>
                                 </ul>
@@ -657,28 +563,34 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!---->
 <div class="content-page">
     <div class="container">
-        @foreach($Categories as $data => $val)
+       
         <!-- featured category fashion -->
         <div class="category-featured">
             <nav class="navbar nav-menu nav-menu-red show-brand">
               <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                  <div class="navbar-brand"><a href="#"><img alt="fashion" src="public/assets/data/fashion.png" />{{$val->name}}</a></div>
+                  <div class="navbar-brand"><a href="#"><i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;&nbsp;Máy Tính Mới</a></div>
                   <span class="toggle-menu"></span>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse">           
-                  <ul class="nav navbar-nav">
-                   @if ($category_childs = DB::table('categories')->where('parent_id','=',$val->id)->get())
-                    @foreach($category_childs as $data => $val)
-                    <li class=""><a data-toggle="tab" href="#">{{$val->name}}</a></li>
-                   @endforeach
-                   @endif
+                  <ul class="nav navbar-nav" id = "resultsBox">
+                  
+                    <?php $count = 1;?>
+                    @foreach($allCategories as $data => $val)
+                    <?php if($count == 1){ ?>
+                         <li class="active"><a data-toggle="tab" href="#{{$val->id}}">{{$val->name}}</a></li>
+                    <?php } else { ?>
+                        <li class=""><a data-toggle="tab" href="#{{$val->id}}">{{$val->name}}</a></li>
+                    <?php }
+                    $count = $count + 1;
+                    ?>
                    
-                    
+                   @endforeach
+    
                   </ul>
                 </div><!-- /.navbar-collapse -->
               </div><!-- /.container-fluid -->
@@ -696,675 +608,56 @@
                 </div>
            </div>
            <div class="product-featured clearfix">
-                
+
                 <div class="product-featured-content">
                    
                         <div class="tab-container">
                             <!-- tab product -->
-                            <div class="tab-panel active" id="tab-4">
+                            <?php $count2 = 1;?>
+                            @foreach($allCategories as $data => $val)
+                                @if($products = DB::table('products')->where('category_id','=',$val->id)->get())
+                                <?php if($count2 == 1){ ?>
+                            <div class="tab-panel active" id="{{$val->id}}">
+                            <?php } else { ?>
+                             <div class="tab-panel" id="{{$val->id}}">
+                             <?php }
+                                $count2 = $count2 + 1;
+                                ?>
                                 <ul class="product-list owl-carousel" data-dots="false" data-loop="true" data-nav = "true" data-margin = "0" data-autoplay="true" data-autoplayHoverPause = "true" data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":4}}'>
+                                    @foreach($products as $data => $val)
                                     <li>
                                         <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/01_blue-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
+                                            <a href="{{asset('/chi-tiet-san-pham/'.$val->alias)}}">
+                                            <img class="img-responsive" alt="product" src="{{$val->image}}" /></a>
+                                           
                                             <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
+                                                <a title="Add to Cart" href="{{asset('/chi-tiet-san-pham/'.$val->alias)}}">Xem chi tiết</a>
                                             </div>
                                         </div>
                                         <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Blue Dress</a></h5>
+                                            <h5 class="product-name"><a href="#">{{$val->name}}</a></h5>
                                             <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
+                                                <span class="price product-price">{{number_format($val->new_price,0,",",".")}} đ</span>
+                                                <span class="price old-price">{{number_format($val->old_price,0,",",".")}} đ</span>
                                             </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
+                                        
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/02_yellow-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Yellow Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/03_cyan-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Cyan Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/04_nice-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Nice Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/05_flowers-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Flowers Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/06_red-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Red Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/01_blue-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Blue Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/02_yellow-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Yellow Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/03_cyan-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Cyan Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/04_nice-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Nice Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/05_flowers-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Flowers Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/06_red-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Red Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
+                            @endif
+                            @endforeach
                             <!-- tab product -->
-                            <div class="tab-panel" id="tab-5">
-                                <ul class="product-list owl-carousel" data-dots="false" data-loop="true" data-nav = "true" data-margin = "0" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":4}}'>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/04_nice-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Nice Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/05_flowers-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Flowers Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/06_red-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Red Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/01_blue-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Blue Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/02_yellow-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Yellow Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/03_cyan-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Cyan Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/04_nice-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Nice Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/05_flowers-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Flowers Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-block">
-                                            <a href="#">
-                                            <img class="img-responsive" alt="product" src="public/assets/data/06_red-dress.jpg" /></a>
-                                            <div class="quick-view">
-                                                    <a title="Add to my wishlist" class="heart" href="#"></a>
-                                                    <a title="Add to compare" class="compare" href="#"></a>
-                                                    <a title="Quick view" class="search" href="#"></a>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <a title="Add to Cart" href="#">Add to Cart</a>
-                                            </div>
-                                        </div>
-                                        <div class="right-block">
-                                            <h5 class="product-name"><a href="#">Red Dress</a></h5>
-                                            <div class="content_price">
-                                                <span class="price product-price">$38,95</span>
-                                                <span class="price old-price">$52,00</span>
-                                            </div>
-                                            <div class="product-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                           
                         </div>
                    
                 </div>
            </div>
         </div>
         <!-- end featured category fashion -->
-        @endforeach
-       
-        
-       
-        
-        <!-- Baner bottom -->
-        <div class="row banner-bottom">
-            <div class="col-sm-6">
-                <div class="banner-boder-zoom">
-                    <a href="#"><img alt="ads" class="img-responsive" src="public/assets/data/ads17.jpg" /></a>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="banner-boder-zoom">
-                    <a href="#"><img alt="ads" class="img-responsive" src="public/assets/data/ads18.jpg" /></a>
-                </div>
-            </div>
-        </div>
-        <!-- end banner bottom -->
-    </div>
-</div>
-
-<div class="container">
-    <div class="brand-showcase">
-        <h2 class="brand-showcase-title">
-            Nhãn hàng
-        </h2>
-        <ul class="band-logo owl-carousel"  data-dots="false" data-loop="true" data-nav = "true" data-margin = "2" data-autoplay="true" data-responsive='{"0":{"items":3},"600":{"items":5},"1000":{"items":8}}'>
-                <li>
-                    <a href="#"><img src="public/assets/data/dell.jpg" alt="Band logo"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="public/assets/data/hp.jpg" alt="Band logo"></a>
-                </li>
-                  <li>
-                    <a href="#"><img src="public/assets/data/thinkpad.jpg" alt="Band logo"></a>
-                </li>
-                 <li>
-                    <a href="#"><img src="public/assets/data/dell.jpg" alt="Band logo"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="public/assets/data/hp.jpg" alt="Band logo"></a>
-                </li>
-                  <li>
-                    <a href="#"><img src="public/assets/data/thinkpad.jpg" alt="Band logo"></a>
-                </li>
-                 <li>
-                    <a href="#"><img src="public/assets/data/dell.jpg" alt="Band logo"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="public/assets/data/hp.jpg" alt="Band logo"></a>
-                </li>
-                  <li>
-                    <a href="#"><img src="public/assets/data/thinkpad.jpg" alt="Band logo"></a>
-                </li>
-        </ul>
-        
-    </div>
-</div>
-
-<div id="content-wrap">
+     
+  <div id="content-wrap">
     <div class="container">
         <div id="hot-categories" class="row">
             <div class="col-sm-12 group-title-box">
@@ -1566,7 +859,66 @@
         </div> <!-- /#hot-categories -->
         
     </div> <!-- /.container -->
+</div>     
+        
+       
+        
+        <!-- Baner bottom -->
+        <div class="row banner-bottom">
+            <div class="col-sm-6">
+                <div class="banner-boder-zoom">
+                    <a href="#"><img alt="ads" class="img-responsive" src="public/assets/data/ads17.jpg" /></a>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="banner-boder-zoom">
+                    <a href="#"><img alt="ads" class="img-responsive" src="public/assets/data/ads18.jpg" /></a>
+                </div>
+            </div>
+        </div>
+        <!-- end banner bottom -->
+    </div>
 </div>
+
+<div class="container">
+    <div class="brand-showcase">
+        <h2 class="brand-showcase-title">
+            Nhãn hàng
+        </h2>
+        <ul class="band-logo owl-carousel"  data-dots="false" data-loop="true" data-nav = "true" data-margin = "2" data-autoplay="true" data-responsive='{"0":{"items":3},"600":{"items":5},"1000":{"items":8}}'>
+                <li>
+                    <a href="#"><img src="public/assets/data/dell.jpg" alt="Band logo"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="public/assets/data/hp.jpg" alt="Band logo"></a>
+                </li>
+                  <li>
+                    <a href="#"><img src="public/assets/data/thinkpad.jpg" alt="Band logo"></a>
+                </li>
+                 <li>
+                    <a href="#"><img src="public/assets/data/dell.jpg" alt="Band logo"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="public/assets/data/hp.jpg" alt="Band logo"></a>
+                </li>
+                  <li>
+                    <a href="#"><img src="public/assets/data/thinkpad.jpg" alt="Band logo"></a>
+                </li>
+                 <li>
+                    <a href="#"><img src="public/assets/data/dell.jpg" alt="Band logo"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="public/assets/data/hp.jpg" alt="Band logo"></a>
+                </li>
+                  <li>
+                    <a href="#"><img src="public/assets/data/thinkpad.jpg" alt="Band logo"></a>
+                </li>
+        </ul>
+        
+    </div>
+</div>
+
+
 
 <!-- Footer -->
   <footer id="footer">

@@ -22,21 +22,24 @@ class HomeController extends Controller
     {
         $Categories= Category::where('parent_id','=',0)->get();
         $allCategories= Category::where('parent_id','!=',0)->get(); 
-        /*$new_products = DB::table('products')->select('id','ten','anhdaidien','gia','alias')->orderBy('id','DESC')->paginate(8);
-        $blogs = DB::table('blog')->select('id','title','description','image','alias')->orderBy('id','ASC')->limit(2)->get();*/
-       return view('front-end.pages.home',compact('allCategories','Categories'));
+      
+        $products = Product::all();
+        
+       return view('front-end.pages.home',compact('allCategories','Categories','products'));
     }
     public function loaisanpham($tenloai)
     {
          $name_cate = DB::table('categories')->select('name','id')->where('alias',$tenloai)->first();
-        //$product_cates = DB::table('products')->select('id','ten','alias','gia','anhdaidien','category_id')->where('category_id',$id)->paginate(10);
+        $product_cates = DB::table('products')->select('*')->where('category_id',$name_cate->id)->get();
        
-        return view('front-end.pages.category',compact('name_cate'));
+        return view('front-end.pages.category',compact('name_cate','product_cates'));
     }
-    public function chitietsanpham($id){
-        $product_detail  = DB::table('products')->where('id',$id)->first();
+    public function chitietsanpham($tenloai){
+        $product_detail  = DB::table('products')->where('alias',$tenloai)->first();
        $category = DB::table('categories')->where('id',  $product_detail->category_id)->first();
-        return view('frontend.pages.product',compact('product_detail','category'));
+       $image_details = DB::table('imagedetail')->where('product_id',  $product_detail->id)->get();
+       $product_cate =DB::table('products')->where('category_id',$product_detail->category_id)->where('id','<>',$product_detail->id)->get();
+        return view('front-end.pages.product_detail',compact('product_detail','category','image_details','product_cate'));
     }
     public function muahang($id){
 

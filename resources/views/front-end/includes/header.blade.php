@@ -7,19 +7,6 @@
            </div>
            <div class="top-bar-social">
             <a href="https://www.facebook.com/laptopphonglinh/"><i class="fa fa-facebook"></i></a>
-
-        </div>
-
-
-        <div id="user-info-top" class="user-info pull-right">
-            <div class="dropdown">
-                <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><span>My Account</span></a>
-                <ul class="dropdown-menu mega_dropdown" role="menu">
-                    <li><a href="login.html">Đăng xuất</a></li>
-                    <li><a href="#">Hồ sơ cá nhân</a></li>
-
-                </ul>
-            </div>
         </div>
     </div>
 </div>
@@ -28,7 +15,7 @@
 <div class="container main-header">
     <div class="row">
         <div class="col-xs-12 col-sm-3 logo">
-            <a href="#"><img alt="Kute Shop" src="/public/assets/images/logo.png" /></a>
+            <a href="#"><img alt="Kute Shop" src="{{asset('/public/assets/images/logo.png')}}" /></a>
         </div>
         <div class="col-xs-7 col-sm-7 header-search-box">
             <form class="form-inline">
@@ -55,7 +42,9 @@
                     <div class="vertical-menu-content is-home">
 
                         <ul class="vertical-menu-list">
-                        <?php $allCategories = category_childs();?>
+                        <?php $allCategories = category_childs();
+                       
+                        ?>
                             @foreach($allCategories as $data => $category)
                              <li><a href="{{asset('/loai-san-pham/'.$category->alias)}}"><img class="icon-menu" alt="Funky roots" src="{{asset('public/assets/data/3.png')}}">{{$category->name}}</a></li>
                         @endforeach
@@ -89,7 +78,7 @@
                                                 <ul class="block">
                                                  @for ($j = $i; $j < $i+3; $j++)
                                                   @if($j<count($category_childs))   
-                                                    <li class="link_container"><a href="{{$category_childs[$j]->id}}">{{$category_childs[$j]->name}}</a></li> 
+                                                    <li class="link_container"><a href="{{asset('/loai-san-pham/'.$category_childs[$j]->alias)}}">{{$category_childs[$j]->name}}</a></li> 
                                                 @endif
                                                 @endfor   
                                                 </ul>
