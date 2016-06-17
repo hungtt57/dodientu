@@ -41,7 +41,17 @@
                       </ul>
                   </li>
 
-              
+                
+                   <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="icon-list-ul"></i>
+                          <span>Quản lý banner</span>
+                      </a>
+                      <ul class="sub">
+                         
+                          <li><a  href="{{asset('admin/banner/')}}">Danh sách banner</a></li>
+                      </ul>
+                  </li>
 
                     <li class="sub-menu">
                       <a href="javascript:;" >

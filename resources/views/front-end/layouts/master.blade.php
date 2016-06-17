@@ -16,12 +16,12 @@
     <link rel="stylesheet" type="text/css" href="{{asset('public/assets/css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('public/assets/css/responsive.css')}}" />
     @yield('css')
-<<<<<<< HEAD
+
     <title>@yield('title')</title>
-=======
-    <title>Laptop Phong Linh - Chuyên Laptop USA chính hãng</title>
+
+
     <meta property="fb:app_id" content="600247426797446"/>
->>>>>>> fe2bf9637f97654998c458261069a976d6b665a2
+
 </head>
 <body class="category-page">
 <div id="fb-root"></div>

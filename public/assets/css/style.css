@@ -2996,6 +2996,7 @@ span.notify-right{
 
 .check-box-list{
   overflow: hidden;
+  padding-top:15px !important;
 }
 .check-box-list li{
   line-height: 24px;

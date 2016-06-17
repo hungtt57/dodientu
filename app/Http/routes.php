@@ -72,6 +72,16 @@ Route::group(['middleware' => 'auth'], function () {
       Route::post('/{id}/edit','ProductController@update');
       Route::get('/{id}/delete','ProductController@destroy');
     });
+      Route::group(['prefix' => 'banner'],function(){
+      Route::get('/','BannerController@index');
+      
+      Route::get('/create','BannerController@create');
+      Route::post('/create','BannerController@store');
+      Route::get('/{id}/show','BannerController@show');
+      Route::get('/{id}/edit','BannerController@edit');
+      Route::post('/{id}/edit','BannerController@update');
+      Route::get('/{id}/delete','BannerController@destroy');
+    });
       // Route::group(['prefix' => 'order'],function(){
       //     Route::get('/','OrderController@index');
       //     Route::get('/list','OrderController@index');
