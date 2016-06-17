@@ -18,6 +18,7 @@
     @yield('css')
     <title>Laptop Phong Linh - Chuyên Laptop USA chính hãng</title>
     <meta property="fb:app_id" content="600247426797446"/>
+    <meta property="fb:admins" content="100006879813343"/>
 </head>
 <body class="category-page">
 <div id="fb-root"></div>
