@@ -313,43 +313,44 @@
 
                     </div>
                     <div class="product-desc">
-                       {{$product_detail->short_description}}
-                   </div>
+                     {{$product_detail->short_description}}
+                 </div>
 
-                   <div class="form-share">
+                 <div class="form-share">
                     <div class="sendtofriend-print">
                         <?php
                         function curPageURL() {
                           $pageURL = 'http';
                           if (isset( $_SERVER["HTTPS"] ) && strtolower( $_SERVER["HTTPS"] ) == "on" ) {
-                             $pageURL .= 's';
-                         }
-                         $pageURL .= '://';
-                         if ($_SERVER['SERVER_PORT'] != '80') {
-                            $pageURL .= $_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
-                        } else {
-                            $pageURL .= $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-                        }
-                        return $pageURL;
-                    } 
+                           $pageURL .= 's';
+                       }
+                       $pageURL .= '://';
+                       if ($_SERVER['SERVER_PORT'] != '80') {
+                        $pageURL .= $_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
+                    } else {
+                        $pageURL .= $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+                    }
+                    return $pageURL;
+                } 
 
-                    ?>
-                    <div class="fb-like" data-href="<?php echo curPageURL();?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-                    <script>(function(d, s, id) {
-                      var js, fjs = d.getElementsByTagName(s)[0];
-                      if (d.getElementById(id)) return;
-                      js = d.createElement(s); js.id = id;
-                      js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=600247426797446";
-                      fjs.parentNode.insertBefore(js, fjs);
-                  }(document, 'script', 'facebook-jssdk'));</script>
-              </div>
-              <div class="network-share">
-              </div>
+                ?>
+                <div class="fb-like" data-href="<?php echo curPageURL();?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=600247426797446";
+                  fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));</script>
+          </div>
+          <div class="network-share">
           </div>
       </div>
   </div>
-  <!-- tab product -->
-  <div class="product-tab">
+</div>
+<!-- tab product -->
+<div class="product-tab">
     <ul class="nav-tab">
         <li class="active">
             <a aria-expanded="false" data-toggle="tab" href="#product-detail">Mô tả sản phẩm</a>
@@ -435,6 +436,7 @@
 </div>
 <!-- ./tab product -->
 <!-- box product -->
+
 <div class="page-product-box">
     <h3 class="heading">Related Products</h3>
     <ul class="product-list owl-carousel" data-dots="false" data-loop="true" data-nav = "true" data-margin = "30" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":3}}'>
@@ -465,6 +467,11 @@
 </div>
 <!-- ./box product -->
 
+
+
+<div class="page-product-box">
+<div class="fb-comments" data-href="<?php echo curPageURL();?>" data-width="850" data-numposts="5"></div>
+</div>
 </div>
 <!-- Product -->
 </div>

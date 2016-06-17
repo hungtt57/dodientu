@@ -18,10 +18,10 @@
             <a href="#"><img alt="Kute Shop" src="{{asset('/public/assets/images/logo.png')}}" /></a>
         </div>
         <div class="col-xs-7 col-sm-7 header-search-box">
-            <form class="form-inline">
+            <form class="form-inline" method="get" action="{{asset('tim-kiem')}}">
 
               <div class="form-group input-serach">
-                <input type="text"  placeholder="Từ khóa tìm kiếm..." style="line-height: 40px;">
+                <input type="text"  name= "search" placeholder="Từ khóa tìm kiếm..." style="line-height: 40px;">
             </div>
             <button type="submit" class="pull-right btn-search"></button>
         </form>
@@ -90,9 +90,8 @@
                             </li>
                             @endforeach
 
-                            <li><a href="category.html">Dịch vụ</a></li>
-                            <li><a href="category.html">Tin tức</a></li>
-                            <li><a href="category.html">Khuyến mãi</a></li>
+                            <li><a href="{{asset('/lien-he')}}">Liên hệ</a></li>
+                           <li><a href="{{asset('/')}}">Khuyến mãi</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
