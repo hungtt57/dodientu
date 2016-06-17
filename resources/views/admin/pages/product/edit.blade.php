@@ -62,7 +62,7 @@
 					<div class="form-group">
 						<label class="col-md-2 control-label" for="name_category">Thông số kĩ thuật</label>
 						<div class="col-md-10">
-							<textarea class="form-control" tabindex="1" type="text" name=info" id="info">
+							<textarea class="form-control" tabindex="1" type="text" name="info" id="info">
 								{{$product->info}}</textarea>
 								<script> CKEDITOR.replace('info')</script>
 							</div>

@@ -1,7 +1,8 @@
 @extends('front-end.layouts.master')
+@section('title')
+{{$product_detail->name}} | Laptop Phong Linh
+@endsection
 @section('content')
-
-
 
 <!-- breadcrumb -->
 <div class="breadcrumb clearfix">
@@ -288,24 +289,16 @@
                 </div>
                 <div class="pb-right-column col-xs-12 col-sm-6">
                     <h1 class="product-name">{{$product_detail->name}}</h1>
-                    <div class="product-comments">
-                        <div class="product-star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-o"></i>
-                        </div>
-                        <div class="comments-advices">
-                            <a href="#">Based  on 3 ratings</a>
-                            <a href="#"><i class="fa fa-pencil"></i> write a review</a>
-                        </div>
-                    </div>
+               
                     <div class="product-price-group">
+                        @if($product_detail->new_price!==$product_detail->old_price)
                         <span class="price">{{number_format($product_detail->new_price,0,",",".")}} đ</span>
                         <span class="old-price">{{number_format($product_detail->old_price,0,",",".")}} đ</span>
-
                         <span class="discount">- {{$product_detail->sale }}%</span>
+                        @else
+                        <span class="price">{{number_format($product_detail->new_price,0,",",".")}} đ</span>
+                        @endif
+
                     </div>
                     <div class="info-orther">
 
@@ -364,7 +357,7 @@
             <p><?php echo $product_detail->description; ?></p>
         </div>
         <div id="information" class="tab-panel">
-          <p>{{$product_detail->info}}</p>
+          <p><?php echo $product_detail->info;  ?></p>
       </div>
       <div id="reviews" class="tab-panel">
         <div class="product-comments-block-tab">

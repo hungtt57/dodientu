@@ -31,8 +31,10 @@
 
 			<div class="col-xs-4">
 
-				<img class="img_product_show" src="{{$product->image}}">
-
+			<img class="img_product_show" src="{{$product->image}}">
+			<?php foreach ($imageDetail as $key => $value): ?>
+				<img class="img_product_show col-md-4" src="{{$value->link}}">
+			<?php endforeach ?>
 			</div>		
 			<div class="col-xs-8">
 				

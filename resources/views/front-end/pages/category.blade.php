@@ -1,4 +1,7 @@
 @extends('front-end.layouts.master')
+@section('title')
+{{$name_cate->name}} | Laptop Phong Linh
+@endsection
 @section('content')
  <!-- breadcrumb -->
         <div class="breadcrumb clearfix">

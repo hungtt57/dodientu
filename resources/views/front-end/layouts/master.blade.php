@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('public/assets/css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('public/assets/css/responsive.css')}}" />
     @yield('css')
-    <title>Laptop Phong Linh - Chuyên Laptop USA chính hãng</title>
+    <title>@yield('title')</title>
 </head>
 <body class="category-page">
 

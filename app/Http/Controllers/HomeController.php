@@ -4,6 +4,7 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use DB,Cart;
 use App\Product;
+use App\ImageDetail;
 use Request;
 use App\Blog;
 use App\Http\Requests\CheckThanhtoanRequest;
@@ -35,9 +36,9 @@ class HomeController extends Controller
         return view('front-end.pages.category',compact('name_cate','product_cates'));
     }
     public function chitietsanpham($tenloai){
-        $product_detail  = DB::table('products')->where('alias',$tenloai)->first();
+        $product_detail  = Product::where('alias',$tenloai)->first();
        $category = DB::table('categories')->where('id',  $product_detail->category_id)->first();
-       $image_details = DB::table('imagedetail')->where('product_id',  $product_detail->id)->get();
+       $image_details =$product_detail->imageDetail()->get();
        $product_cate =DB::table('products')->where('category_id',$product_detail->category_id)->where('id','<>',$product_detail->id)->get();
         return view('front-end.pages.product_detail',compact('product_detail','category','image_details','product_cate'));
     }
