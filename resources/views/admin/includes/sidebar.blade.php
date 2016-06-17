@@ -46,11 +46,11 @@
                     <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="icon-list-ul"></i>
-                          <span>Đơn Hàng</span>
+                          <span>Khoảng giá</span>
                       </a>
                       <ul class="sub">
                        
-                          <li><a  href="{{asset('admin/order/')}}">Danh sách đặt hàng</a></li>
+                          <li><a  href="{{asset('admin/order/')}}">Khoảng giá</a></li>
                       </ul>
                   </li>
 

@@ -31,7 +31,7 @@ class HomeController extends Controller
     public function loaisanpham($tenloai)
     {
          $name_cate = DB::table('categories')->select('name','id')->where('alias',$tenloai)->first();
-        $product_cates = DB::table('products')->select('*')->where('category_id',$name_cate->id)->get();
+        $product_cates = DB::table('products')->select('*')->where('category_id',$name_cate->id)->paginate(15);
        
         return view('front-end.pages.category',compact('name_cate','product_cates'));
     }
@@ -61,14 +61,17 @@ class HomeController extends Controller
             return redirect()->back();
          }
       
-        $products=Product::where('ten','like','%'.$key.'%')->paginate(5,['*'],'product');
+        $products=Product::where('name','like','%'.$key.'%')->paginate(10,['*'],'product');
 
-        $products->setPageName('product');
-    
-        $blogs = Blog::where('title','like','%'.$key.'%')->paginate(5,['*'],'blog');
-         $blogs->setPageName('blog');
+        $products->setPageName('product');   
 
-       return view('frontend.pages.search',compact('products','blogs','key'));
+       return view('front-end.pages.search',compact('products','key'));
+    }
+
+      public function lienhe(){
+      $allCategories= Category::all();
+    //  $blogs = DB::table('blog')->select('id','title','description','image','alias')->orderBy('id','ASC')->limit(2)->get();
+       return view('front-end.pages.contact',compact('allCategories'));
     }
     
      public function xoasanpham($id){
@@ -93,11 +96,7 @@ class HomeController extends Controller
        return view('frontend.pages.about',compact('allCategories','blogs'));
     }
 
-    public function contact(){
-      $allCategories= Category::all();
-      $blogs = DB::table('blog')->select('id','title','description','image','alias')->orderBy('id','ASC')->limit(2)->get();
-       return view('frontend.pages.contact',compact('allCategories','blogs'));
-    }
+  
     public function xoaspcart(){
         if(Request::ajax()){
              $id=Request::get('rowid');

@@ -11,17 +11,14 @@
 */
 //front end
 
-// Route::get('/thanhtoan', function () {
-//     return view('frontend.pages.checkout'); // thanh toan
-// });
-// Route::get('/timkiem','HomeController@timkiem');
-// Route::post('xoaspcart','HomeController@xoaspcart');
-// Route::post('capnhatcart','HomeController@capnhatcart');
+
 
 
 Route::get('/','HomeController@index');
 Route::get('/loai-san-pham/{tenloai}','HomeController@loaisanpham');
 Route::get('/chi-tiet-san-pham/{tenloai}','HomeController@chitietsanpham');
+Route::get('/tim-kiem','HomeController@timkiem');
+Route::get('/lien-he','HomeController@lienhe');
 // Route::get('/home','HomeController@index');
 // Route::get('/loaisanpham/{id}/{tenloai}','HomeController@loaisanpham');
 // Route::get('/chitietsanpham/{id}/{tenloai}','HomeController@chitietsanpham');
