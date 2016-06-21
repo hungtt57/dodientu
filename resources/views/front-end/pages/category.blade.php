@@ -1,4 +1,7 @@
 @extends('front-end.layouts.master')
+@section('title')
+{{$name_cate->name}} | Laptop Phong Linh
+@endsection
 @section('content')
  <!-- breadcrumb -->
         <div class="breadcrumb clearfix">
@@ -17,69 +20,12 @@
                     <div class="block_content">
                         <!-- layered -->
                         <div class="layered layered-filter-price">
-                            <!-- filter categgory -->
-                            <div class="layered_subtitle">CATEGORIES</div>
-                            <div class="layered-content">
-                                <ul class="check-box-list">
-                                    
-                                    <li>
-                                        <input type="checkbox" id="c2" name="cc" />
-                                        <label for="c2">
-                                        <span class="button"></span>
-                                        T-shirts<span class="count">(10)</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="c3" name="cc" />
-                                        <label for="c3">
-                                        <span class="button"></span>
-                                        Dresses<span class="count">(10)</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="c4" name="cc" />
-                                        <label for="c4">
-                                        <span class="button"></span>
-                                        Jackets and coats<span class="count">(10)</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="c5" name="cc" />
-                                        <label for="c5">
-                                        <span class="button"></span>
-                                        Knitted<span class="count">(10)</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="c6" name="cc" />
-                                        <label for="c6">
-                                        <span class="button"></span>
-                                        Pants<span class="count">(10)</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="c7" name="cc" />
-                                        <label for="c7">
-                                        <span class="button"></span>
-                                        Bags & Shoes<span class="count">(10)</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="c8" name="cc" />
-                                        <label for="c8">
-                                        <span class="button"></span>
-                                        Best selling<span class="count">(10)</span>
-                                        </label>
-                                    </li>
-                                </ul>
-                            </div> 
-                            <!-- ./filter categgory -->
+                            
                             <!-- filter price -->
                             <div class="layered_subtitle">Giá</div>
                             <div class="layered-content slider-range">
-                                
-                                <div data-label-reasult="Range:" data-min="0" data-max="500" data-unit="$" class="slider-range-price" data-value-min="50" data-value-max="350"></div>
-                                <div class="amount-range-price">Range: $50 - $350</div>
+                            <form method= "get" action="{{asset('loc-san-pham')}}">
+                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <ul class="check-box-list">
                                     <li>
                                         <input type="checkbox" id="p1" name="price" value="1" />
@@ -117,6 +63,9 @@
                                         </label>   
                                     </li>
                                 </ul>
+                                <input type="hidden" value="{{$name_cate->name}}" name="tenloai" />
+                                <button type="submit" class="btn btn-success">Lọc</button>
+                                </form>
                             </div>
                             <!-- ./filter price -->
                             
@@ -148,21 +97,21 @@
                                 </div>
                             </li>
                            <li>
-                                <div class="client-mane">Trịnh Hữu Huy</div>
+                                <div class="client-mane">Hoàng Ngọc Thể</div>
                                 <div class="client-avarta">
                                     <img src="assets/data/testimonial.jpg" alt="client-avarta">
                                 </div>
                                 <div class="testimonial">
-                                    "Sản phẩm laptop Hp của công ty bạn rất tốt, tôi thấy rất hài lòng"
+                                    "Tôi hi vọng sẽ mua được nhiều sản phẩm của công ty"
                                 </div>
                             </li>
                             <li>
-                                <div class="client-mane">Trịnh Hữu Huy</div>
+                                <div class="client-mane">Hoàng Thế Tiệp</div>
                                 <div class="client-avarta">
                                     <img src="assets/data/testimonial.jpg" alt="client-avarta">
                                 </div>
                                 <div class="testimonial">
-                                    "Sản phẩm laptop Hp của công ty bạn rất tốt, tôi thấy rất hài lòng"
+                                    "Sản phẩm laptop Hp của công ty bạn rất tốt"
                                 </div>
                             </li>
                         </ul>
@@ -176,12 +125,11 @@
                 <!-- category-slider -->
                 <div class="category-slider">
                     <ul class="owl-carousel owl-style2" data-dots="false" data-loop="true" data-nav = "true" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1">
+                       @foreach($banners as $data => $value)
                         <li>
-                            <img src="{{asset('public/assets/data/category-slide.jpg')}}" alt="category-slider">
+                            <img src="{{$value->link}}" alt="category-slider">
                         </li>
-                        <li>
-                            <img src="{{asset('public/assets/data/slide-cart2.jpg')}}" alt="category-slider">
-                        </li>
+                       @endforeach
                     </ul>
                 </div>
                 <!-- ./category-slider -->

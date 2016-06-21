@@ -1,7 +1,8 @@
 @extends('front-end.layouts.master')
+@section('title')
+{{$product_detail->name}} | Laptop Phong Linh
+@endsection
 @section('content')
-
-
 
 <!-- breadcrumb -->
 <div class="breadcrumb clearfix">
@@ -16,249 +17,40 @@
 <div class="row">
     <!-- Left colunm -->
     <div class="column col-xs-12 col-sm-3" id="left_column">
-
-
-        <!-- ./block category  -->
+        <!-- ./block category  -->   
         <!-- block best sellers -->
         <div class="block left-module">
-            <p class="title_block">BEST SELLERS</p>
-            <div class="block_content">
-                <div class="owl-carousel owl-best-sell" data-loop="true" data-nav = "false" data-margin = "0" data-autoplayTimeout="1000" data-autoplay="true" data-autoplayHoverPause = "true" data-items="1">
-                    <ul class="products-block best-sell">
-                        <li>
-                            <div class="products-block-left">
-                                <a href="#">
-                                    <img src="assets/data/product-100x122.jpg" alt="SPECIAL PRODUCTS">
-                                </a>
-                            </div>
-                            <div class="products-block-right">
-                                <p class="product-name">
-                                    <a href="#">Woman Within Plus Size Flared</a>
-                                </p>
-                                <p class="product-price">$38,95</p>
-                                <p class="product-star">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="products-block-left">
-                                <a href="#">
-                                    <img src="assets/data/p11.jpg" alt="SPECIAL PRODUCTS">
-                                </a>
-                            </div>
-                            <div class="products-block-right">
-                                <p class="product-name">
-                                    <a href="#">Woman Within Plus Size Flared</a>
-                                </p>
-                                <p class="product-price">$38,95</p>
-                                <p class="product-star">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="products-block-left">
-                                <a href="#">
-                                    <img src="assets/data/p12.jpg" alt="SPECIAL PRODUCTS">
-                                </a>
-                            </div>
-                            <div class="products-block-right">
-                                <p class="product-name">
-                                    <a href="#">Plus Size Rock Star Skirt</a>
-                                </p>
-                                <p class="product-price">$38,95</p>
-                                <p class="product-star">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="products-block best-sell">
-                        <li>
-                            <div class="products-block-left">
-                                <a href="#">
-                                    <img src="assets/data/p13.jpg" alt="SPECIAL PRODUCTS">
-                                </a>
-                            </div>
-                            <div class="products-block-right">
-                                <p class="product-name">
-                                    <a href="#">Woman Within Plus Size Flared</a>
-                                </p>
-                                <p class="product-price">$38,95</p>
-                                <p class="product-star">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="products-block-left">
-                                <a href="#">
-                                    <img src="assets/data/p14.jpg" alt="SPECIAL PRODUCTS">
-                                </a>
-                            </div>
-                            <div class="products-block-right">
-                                <p class="product-name">
-                                    <a href="#">Woman Within Plus Size Flared</a>
-                                </p>
-                                <p class="product-price">$38,95</p>
-                                <p class="product-star">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="products-block-left">
-                                <a href="#">
-                                    <img src="assets/data/p15.jpg" alt="SPECIAL PRODUCTS">
-                                </a>
-                            </div>
-                            <div class="products-block-right">
-                                <p class="product-name">
-                                    <a href="#">Plus Size Rock Star Skirt</a>
-                                </p>
-                                <p class="product-price">$38,95</p>
-                                <p class="product-star">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- ./block best sellers  -->
-
-        <!-- left silide -->
-        <div class="col-left-slide left-module">
-            <ul class="owl-carousel owl-style2" data-loop="true" data-nav = "false" data-margin = "0" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1" data-autoplay="true">
-                <li><a href="#"><img src="assets/data/slide-left.jpg" alt="slide-left"></a></li>
-                <li><a href="#"><img src="assets/data/slide-left2.jpg" alt="slide-left"></a></li>
-                <li><a href="#"><img src="assets/data/slide-left3.png" alt="slide-left"></a></li>
-            </ul>
-        </div>
-        <!--./left silde-->
-        <!-- block best sellers -->
-        <div class="block left-module">
-            <p class="title_block">ON SALE</p>
+            <p class="title_block">Sản phẩm khuyến mại</p>
             <div class="block_content product-onsale">
                 <ul class="product-list owl-carousel" data-loop="true" data-nav = "false" data-margin = "0" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1" data-autoplay="true">
+                @foreach($product_sale as $data => $val)
                     <li>
                         <div class="product-container">
                             <div class="left-block">
                                 <a href="#">
-                                    <img class="img-responsive" alt="product" src="assets/data/product-260x317.jpg" />
+                                    <img class="img-responsive" alt="product" src="{{$val->image}}" />
                                 </a>
-                                <div class="price-percent-reduction2">-30% OFF</div>
+                                <div class="price-percent-reduction2">- {{$val->sale}} % </div>
                             </div>
                             <div class="right-block">
-                                <h5 class="product-name"><a href="#">Maecenas consequat mauris</a></h5>
-                                <div class="product-star">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </div>
+                                <h5 class="product-name"><a href="{{asset('/chi-tiet-san-pham/'.$val->alias)}}">{{$val->name}}</a></h5>
+                                
                                 <div class="content_price">
-                                    <span class="price product-price">$38,95</span>
-                                    <span class="price old-price">$52,00</span>
+                                    <span class="price product-price">{{number_format($val->new_price,0,",",".")}} đ</span>
+                                    <span class="price old-price">{{number_format($val->old_price,0,",",".")}} đ</span>
                                 </div>
                             </div>
                             <div class="product-bottom">
-                                <a class="btn-add-cart" title="Add to Cart" href="#add">Add to Cart</a>
+                                <a class="btn-add-cart" title="Add to Cart" href="{{asset('/chi-tiet-san-pham/'.$val->alias)}}">Chi tiet</a>
                             </div>
                         </div>
                     </li>
-                    <li>
-                        <div class="product-container">
-                            <div class="left-block">
-                                <a href="#">
-                                    <img class="img-responsive" alt="product" src="assets/data/p35.jpg" />
-                                </a>
-                                <div class="price-percent-reduction2">-10% OFF</div>
-                            </div>
-                            <div class="right-block">
-                                <h5 class="product-name"><a href="#">Maecenas consequat mauris</a></h5>
-                                <div class="product-star">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </div>
-                                <div class="content_price">
-                                    <span class="price product-price">$38,95</span>
-                                    <span class="price old-price">$52,00</span>
-                                </div>
-                            </div>
-                            <div class="product-bottom">
-                                <a class="btn-add-cart" title="Add to Cart" href="#add">Add to Cart</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="product-container">
-                            <div class="left-block">
-                                <a href="#">
-                                    <img class="img-responsive" alt="product" src="assets/data/p37.jpg" />
-                                </a>
-                                <div class="price-percent-reduction2">-42% OFF</div>
-                            </div>
-                            <div class="right-block">
-                                <h5 class="product-name"><a href="#">Maecenas consequat mauris</a></h5>
-                                <div class="product-star">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </div>
-                                <div class="content_price">
-                                    <span class="price product-price">$38,95</span>
-                                    <span class="price old-price">$52,00</span>
-                                </div>
-                            </div>
-                            <div class="product-bottom">
-                                <a class="btn-add-cart" title="Add to Cart" href="#add">Add to Cart</a>
-                            </div>
-                        </div>
-                    </li>
+                @endforeach    
                 </ul>
             </div>
         </div>
         <!-- ./block best sellers  -->
-        <!-- left silide -->
-        <div class="col-left-slide left-module">
-            <div class="banner-opacity">
-                <a href="#"><img src="assets/data/ads-banner.jpg" alt="ads-banner"></a>
-            </div>
-        </div>
-        <!--./left silde-->
+        
     </div>
     <!-- ./left colunm -->
     <!-- Center colunm-->
@@ -288,24 +80,16 @@
                 </div>
                 <div class="pb-right-column col-xs-12 col-sm-6">
                     <h1 class="product-name">{{$product_detail->name}}</h1>
-                    <div class="product-comments">
-                        <div class="product-star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-o"></i>
-                        </div>
-                        <div class="comments-advices">
-                            <a href="#">Based  on 3 ratings</a>
-                            <a href="#"><i class="fa fa-pencil"></i> write a review</a>
-                        </div>
-                    </div>
+               
                     <div class="product-price-group">
+                        @if($product_detail->new_price!==$product_detail->old_price)
                         <span class="price">{{number_format($product_detail->new_price,0,",",".")}} đ</span>
                         <span class="old-price">{{number_format($product_detail->old_price,0,",",".")}} đ</span>
-
                         <span class="discount">- {{$product_detail->sale }}%</span>
+                        @else
+                        <span class="price">{{number_format($product_detail->new_price,0,",",".")}} đ</span>
+                        @endif
+
                     </div>
                     <div class="info-orther">
 
@@ -365,7 +149,7 @@
             <p><?php echo $product_detail->description; ?></p>
         </div>
         <div id="information" class="tab-panel">
-          <p>{{$product_detail->info}}</p>
+          <p><?php echo $product_detail->info;  ?></p>
       </div>
       <div id="reviews" class="tab-panel">
         <div class="product-comments-block-tab">

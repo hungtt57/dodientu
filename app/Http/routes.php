@@ -19,6 +19,9 @@ Route::get('/loai-san-pham/{tenloai}','HomeController@loaisanpham');
 Route::get('/chi-tiet-san-pham/{tenloai}','HomeController@chitietsanpham');
 Route::get('/tim-kiem','HomeController@timkiem');
 Route::get('/lien-he','HomeController@lienhe');
+Route::get('/loc-san-pham','HomeController@loc');
+Route::get('/khuyen-mai','HomeController@khuyenmai');
+Route::get('/bai-viet/{ten}','HomeController@khuyenmai_detail');
 // Route::get('/home','HomeController@index');
 // Route::get('/loaisanpham/{id}/{tenloai}','HomeController@loaisanpham');
 // Route::get('/chitietsanpham/{id}/{tenloai}','HomeController@chitietsanpham');
@@ -71,6 +74,39 @@ Route::group(['middleware' => 'auth'], function () {
       Route::get('/{id}/edit','ProductController@edit');
       Route::post('/{id}/edit','ProductController@update');
       Route::get('/{id}/delete','ProductController@destroy');
+    });
+      Route::group(['prefix' => 'blog'],function(){
+      Route::get('/','BlogController@index');
+      
+      Route::get('/create','BlogController@create');
+      Route::post('/create','BlogController@store');
+      Route::get('/{id}/show','BlogController@show');
+      Route::get('/{id}/edit','BlogController@edit');
+      Route::post('/{id}/edit','BlogController@update');
+      Route::get('/{id}/delete','BlogController@destroy');
+    });
+
+
+      Route::group(['prefix' => 'banner'],function(){
+      Route::get('/','BannerController@index');
+      
+      Route::get('/create','BannerController@create');
+      Route::post('/create','BannerController@store');
+      Route::get('/{id}/show','BannerController@show');
+      Route::get('/{id}/edit','BannerController@edit');
+      Route::post('/{id}/edit','BannerController@update');
+      Route::get('/{id}/delete','BannerController@destroy');
+    });
+
+      Route::group(['prefix' => 'logo'],function(){
+      Route::get('/','LogoController@index');
+      
+      Route::get('/create','LogoController@create');
+      Route::post('/create','LogoController@store');
+      Route::get('/{id}/show','LogoController@show');
+      Route::get('/{id}/edit','LogoController@edit');
+      Route::post('/{id}/edit','LogoController@update');
+      Route::get('/{id}/delete','LogoController@destroy');
     });
       // Route::group(['prefix' => 'order'],function(){
       //     Route::get('/','OrderController@index');

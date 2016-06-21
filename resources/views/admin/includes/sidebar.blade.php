@@ -41,16 +41,36 @@
                       </ul>
                   </li>
 
-              
+                  
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="icon-list-ul"></i>
+                          <span>Tin khuyến mại</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="{{asset('admin/blog/create')}}">Đăng tin khuyến mại</a></li>
+                          <li><a  href="{{asset('admin/blog/')}}">Danh sách tin khuyến mại</a></li>
+                      </ul>
+                  </li>
+                   <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="icon-list-ul"></i>
+                          <span>Quản lý banner</span>
+                      </a>
+                      <ul class="sub">
+                         
+                          <li><a  href="{{asset('admin/banner/')}}">Danh sách banner</a></li>
+                      </ul>
+                  </li>
 
                     <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="icon-list-ul"></i>
-                          <span>Khoảng giá</span>
+                          <span>Quản lý logo</span>
                       </a>
                       <ul class="sub">
-                       
-                          <li><a  href="{{asset('admin/order/')}}">Khoảng giá</a></li>
+                         
+                          <li><a  href="{{asset('admin/logo/')}}">Danh sách logo</a></li>
                       </ul>
                   </li>
 

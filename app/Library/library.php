@@ -32,6 +32,12 @@ function category_name($id){
     $allCategories = Category::where('parent_id','!=',0)->get();
    return $allCategories;
  }
+
+ function get_logo(){
+     $logo = DB::table('imagelogo')->where('logo_id','1')->first();
+   return $logo;
+ }
+  
   
 function getCategory(){
     $category=DB::table('categories')->get();

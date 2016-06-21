@@ -15,7 +15,8 @@
 <div class="container main-header">
     <div class="row">
         <div class="col-xs-12 col-sm-3 logo">
-            <a href="#"><img alt="Kute Shop" src="{{asset('/public/assets/images/logo.png')}}" /></a>
+        <?php $logo = get_logo();?>
+            <a href="{{asset('/')}}"><img alt="Kute Shop" src="<?php echo $logo->link; ?>" /></a>
         </div>
         <div class="col-xs-7 col-sm-7 header-search-box">
             <form class="form-inline" method="get" action="{{asset('tim-kiem')}}">
@@ -91,7 +92,7 @@
                             @endforeach
 
                             <li><a href="{{asset('/lien-he')}}">Liên hệ</a></li>
-                           <li><a href="{{asset('/')}}">Khuyến mãi</a></li>
+                           <li><a href="{{asset('/khuyen-mai')}}">Khuyến mãi</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>

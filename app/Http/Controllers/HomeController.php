@@ -4,7 +4,9 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use DB,Cart;
 use App\Product;
+use App\ImageDetail;
 use Request;
+//use Illuminate\Http\Request;
 use App\Blog;
 use App\Http\Requests\CheckThanhtoanRequest;
 use App\Order;
@@ -22,26 +24,58 @@ class HomeController extends Controller
     {
         $Categories= Category::where('parent_id','=',0)->get();
         $allCategories= Category::where('parent_id','!=',0)->get(); 
-      
         $products = Product::all();
-        
-       return view('front-end.pages.home',compact('allCategories','Categories','products'));
+        $banners = DB::table('imagebanner')->where('banner_id','1')->orderby('id','desc')->take(3)->get();
+        $logo = DB::table('imagelogo')->where('logo_id','1')->first();
+        $banner_event = DB::table('imagebanner')->where('banner_id','3')->orderby('id','desc')->first();
+        $products_new = DB::table('products')->orderby('id','asc')->take(8)->get();
+       return view('front-end.pages.home',compact('allCategories','Categories','products','banners','logo','banner_event','products_new'));
     }
     public function loaisanpham($tenloai)
     {
          $name_cate = DB::table('categories')->select('name','id')->where('alias',$tenloai)->first();
         $product_cates = DB::table('products')->select('*')->where('category_id',$name_cate->id)->paginate(15);
-       
-        return view('front-end.pages.category',compact('name_cate','product_cates'));
+       $banners = DB::table('imagebanner')->where('banner_id','2')->orderby('id','desc')->take(3)->get();
+        return view('front-end.pages.category',compact('name_cate','product_cates','banners'));
     }
     public function chitietsanpham($tenloai){
-        $product_detail  = DB::table('products')->where('alias',$tenloai)->first();
+        $product_detail  = Product::where('alias',$tenloai)->first();
        $category = DB::table('categories')->where('id',  $product_detail->category_id)->first();
-       $image_details = DB::table('imagedetail')->where('product_id',  $product_detail->id)->get();
+       $image_details =$product_detail->imageDetail()->get();
        $product_cate =DB::table('products')->where('category_id',$product_detail->category_id)->where('id','<>',$product_detail->id)->get();
-        return view('front-end.pages.product_detail',compact('product_detail','category','image_details','product_cate'));
+       $product_sale=DB::table('products')->where('sale','<>','0')->take(3)->get();
+        return view('front-end.pages.product_detail',compact('product_detail','category','image_details','product_cate','product_sale'));
     }
-    public function muahang($id){
+
+    public function loc(Request $request){
+      $value = Request::get('price');
+      $tenloai = Request:: get('tenloai');
+      $category_id = DB::table('categories')->select('id','name')->where('name',$tenloai)->first();
+
+      if($value == 1 ){
+        $product_filter =   DB::table('products')->select('*')->where('category_id',$category_id->id)->where('new_price','<','500000')->paginate(12);
+      
+      }
+       else if($value == 2 ){
+        $product_filter =   DB::table('products')->select('*')->where('category_id',$category_id->id)->where('new_price','>=','500000')->where('new_price','<','1000000')->paginate(12);
+       
+      }
+      else if($value == 3 ){
+        $product_filter =   DB::table('products')->select('*')->where('category_id',$category_id->id)->wwhere('new_price','>=','1000000')->where('new_price','<','20000000')->paginate(12);
+    
+      }
+      else if($value ==4 ){
+        $product_filter =   DB::table('products')->select('*')->where('category_id',$category_id->id)->where('new_price','>=','2000000')->where('new_price','<','10000000')->paginate(12);
+       
+      }
+      else if($value == 5 ){
+        $product_filter =   DB::table('products')->select('*')->where('category_id',$category_id->id)->where('new_price','>=','10000000')->get();
+      }
+
+      return view('front-end.pages.filter',compact('category_id','product_filter'));
+      
+    }
+  /*  public function muahang($id){
 
         $qty = Request::get("qty");
         $product_buy = DB::table('products')->where('id',$id)->first();
@@ -53,7 +87,7 @@ class HomeController extends Controller
         $content = Cart::content();
         $total = Cart::total();
         return view('frontend.pages.cart',compact('content','total'));
-    }
+    }*/
     public function timkiem(Request $request){
         $key=Request::get('search');
          if($key=="" || $key==" "){
@@ -78,18 +112,18 @@ class HomeController extends Controller
         return redirect('/giohang');
     }
    
-    public function blog(){
-        $allBlogs=DB::table('blog')->paginate(10);
-        $recent_blogs = DB::table('blog')->orderBy('id','DESC')->limit(2)->get();
-       return view('frontend.pages.blog',compact('allBlogs','recent_blogs'));
+    public function khuyenmai(){
+        $allBlogs=DB::table('blogs')->paginate(10);
+        $recent_blogs = DB::table('blogs')->orderBy('id','DESC')->limit(2)->get();
+       return view('front-end.pages.blog',compact('allBlogs','recent_blogs'));
     }
-    public function blog_detail($id){
-        $blog_detail = DB::table('blog')->where('id',$id)->first();
-        $recent_blogs = DB::table('blog')->orderBy('id','DESC')->limit('2')->get(); 
-        return view('frontend.pages.blog_detail',compact('blog_detail','recent_blogs'));
+    public function khuyenmai_detail($alias){
+        $blog_detail = DB::table('blogs')->where('alias',$alias)->first();
+        $recent_blogs = DB::table('blogs')->orderBy('id','DESC')->limit('2')->get(); 
+        return view('front-end.pages.blog_detail',compact('blog_detail','recent_blogs'));
     }
 
-    public function about(){
+   /* public function about(){
       $allCategories= Category::all();
       $blogs = DB::table('blog')->select('id','title','description','image','alias')->orderBy('id','ASC')->limit(2)->get();
        return view('frontend.pages.about',compact('allCategories','blogs'));
@@ -176,7 +210,7 @@ class HomeController extends Controller
           Cart::destroy();
          return redirect('/')->with('message','Checkout successed!!Please check mail to know more info order!!');
     }
-
+*/
 
 
 

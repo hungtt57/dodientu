@@ -18,7 +18,7 @@
                         <div class="page-title category-title">
                             <h1> Tìm kiếm với từ khóa:{{$key}}</h1>
                             <h1>
-                                @if(count($products)==0 &&count($blogs)==0)
+                                @if(count($products)==0 )
                                 Không tìm thấy kết quả:vui lòng thử lại
                                 @else
 

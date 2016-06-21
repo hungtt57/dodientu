@@ -60,7 +60,7 @@ class ProductController extends Controller
      */
     public function store(CreateProductRequest $request)
     {
-       Session::forget('key');
+         Session::forget('categories_dequy');
         $product= new Product;
         $product->name = $request->input('name');
         $product->alias = str_slug($product->name);
@@ -104,17 +104,10 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product='';
-        $allCategories = [];
-        if(!Session::has('product_'+$id)){
-            $product= Product::find($id);
-            Session::put('product_'+$id,$product);
-        }else{
-           $product = Session::get('product_'+$id);
-        }
-
+        $product= Product::find($id);     
         $category_name = Category::where('id','=',$product->category_id)->first()->name;
-        return view('admin.pages.product.show')->with('product',$product)->with('category_name',$category_name);
+        $imageDetail = $product->imageDetail()->get();
+        return view('admin.pages.product.show')->with('product',$product)->with('category_name',$category_name)->with('imageDetail',$imageDetail);
     }
 
     /**
@@ -150,7 +143,7 @@ class ProductController extends Controller
      */
     public function update(CheckEditProductRequest $request, $id)
     {
-       Session::forget('key');
+       Session::forget('categories_dequy');
         $product=Product::find($id);
          $product->name = $request->input('name');
         $product->alias = str_slug($product->name);
@@ -158,6 +151,8 @@ class ProductController extends Controller
         $product->short_description = $request->input('short_description');
         $product->old_price = $request->input('old_price');
         $product->new_price = $request->input('new_price');
+        $product->info = $request->input('info');
+        
         if($request->input('new_price')==''){
             $product->sale = 0;
             $product->new_price = $request->input('old_price');

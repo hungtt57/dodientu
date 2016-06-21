@@ -1256,13 +1256,14 @@ span.notify-right{
   border-right: 1px solid #cacaca;
   padding: 0 25px;
   background: transparent;
+  font-weight: 600;
 }
 #main-menu .navbar .navbar-nav>li:last-child>a{
   border-right: none;
 }
 #main-menu .navbar .navbar-nav>li:hover,
 #main-menu .navbar .navbar-nav>li.active{
-  background: #00abb3;
+  background: #007176;
   color: #fff;
 }
 #main-menu .navbar .navbar-nav>li:hover>a,
@@ -1470,7 +1471,7 @@ span.notify-right{
 .nav-menu-red li a:hover,
 .nav-menu-red li.active a,
 .nav-menu-red li.selected a{
-    background: #00abb3;
+    background: #007176;;
     color: #fff;
 }
 /**green nav**/
@@ -2996,6 +2997,7 @@ span.notify-right{
 
 .check-box-list{
   overflow: hidden;
+  padding-top:15px !important;
 }
 .check-box-list li{
   line-height: 24px;

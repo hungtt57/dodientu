@@ -3,65 +3,70 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Blog;
+
+use App\Blogs;
+use App\ImageDetail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CheckBlogRequest;
+use App\Http\Requests\CreateProductRequest;
+use App\Http\Requests\CheckEditProductRequest;
+use Slug;
 use DB;
-use Sunra\PhpSimple\HtmlDomParser;
 use File;
+use Image;
+use Session;
+
 class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-       $blogs= Blog::all();
-    
-       return view('admin.pages.blog.index',['blogs'=>$blogs]);
+         $blogs= Blogs::all();
+       return view('admin.pages.blog.list',['blogs'=>$blogs]);
     }
-     
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
-       
         return view('admin.pages.blog.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
-     * @return Response
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
-    public function store(CheckBlogRequest $request)
+    public function store(Request $request)
     {
-        $blog=new Blog;
+        $blog=new Blogs;
         $blog->title=$request->input('title');
+        $blog->alias=str_slug($request->input('title'),'-');
         $blog->description=$request->input('description');
         $blog->content=$request->input('content');
-        $anhdaidien=$request->file('image');
-        if($anhdaidien){
-              $filename = str_slug($blog->title).'.' . $anhdaidien->getClientOriginalExtension();
-            $path = public_path().'/image/blog/thumb/' . $filename;
-                Image::make($anhdaidien->getRealPath())->resize(380, 210)->save($path);
-                $blog->thumb= 'public/image/blog/thumb/' . $filename;
-
-        }
+        $blog->image=$request->input('image');
+       
         $blog->save();
-        return redirect('/admin/blog/list')->with(['flash_message'=>'Tạo thành công']);
+        return redirect('/admin/blog/')->with(['flash_message'=>'Tạo thành công']);
     }
+
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-    $blog=Blog::find($id);
+        $blog=Blogs::find($id);
     return view('admin/pages/blog/show')->with('blog',$blog);
     }
 
@@ -69,37 +74,30 @@ class BlogController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-         
-        $blog=Blog::find($id);
+         $blog=Blogs::find($id);
         return view('admin.pages.blog.edit',compact('blog'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $blog = Blog::find($id);
+        $blog = Blogs::find($id);
         $blog->title=$request->input('title');
+        $blog->alias=str_slug($request->input('title'),'-');
         $blog->description=$request->input('description');
         $blog->content=$request->input('content');
 
-        $anhdaidien=$request->file('image');
-        if($anhdaidien){
-              $filename = str_slug($blog->title).'.' . $anhdaidien->getClientOriginalExtension();
-            $path = public_path().'/image/blog/thumb/' . $filename;
-                Image::make($anhdaidien->getRealPath())->resize(380, 210)->save($path);
-                $blog->thumb= 'public/image/blog/thumb/' . $filename;
-
-        }
+        $blog->image=$request->input('image');
         $blog->save();
         return redirect('admin/blog/')->with(['flash_message'=>'Sửa thành công']);
     }
@@ -108,21 +106,13 @@ class BlogController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $blog=blog::find($id);
-        File::delete($blog->image);
-        $html=HtmlDomParser::str_get_html($blog->content);
-        foreach($html->find('img') as $img)
-        {
-           
-           File::delete(substr($img->src,1));
-        }
+         $blog=Blogs::find($id);
         $blog->delete();
-        
-        return redirect('admin/blog/')->with(['flash_message'=>'Xóa thành công']);
-        
+        return redirect('admin/blog/')->with(['danger'=>'Xóa thành công']);
+
     }
 }

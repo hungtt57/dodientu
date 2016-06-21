@@ -5,7 +5,8 @@
     <div id="introduce-box" class="row">
         <div class="col-md-3">
             <div id="address-box">
-                <a href="#"><img src="public/assets/data/introduce-logo.png" alt="" /></a>
+                <?php $logo = get_logo();?>
+            <a href="{{asset('/')}}"><img alt="Kute Shop" src="<?php echo $logo->link; ?>" /></a>
                 <div id="address-list">
                     <div class="tit-name">Địa chỉ:</div>
                     <div class="tit-contain">99 Ngõ Núi Trúc, Giang Văn Minh, Ba Đình, Hà Nội</div>
